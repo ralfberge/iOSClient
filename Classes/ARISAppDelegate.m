@@ -7,6 +7,7 @@
 //
 
 #import "ARISAppDelegate.h"
+#import "Node.h"
 
 @implementation ARISAppDelegate
 
@@ -33,22 +34,25 @@
 	appModel = [[AppModel alloc] init];
 	
 	//Init keys in UserDefaults in case the user has not visited the ARIS Settings page
-	//To set these defaults, edit Settings.bundle->Root.plist and initUSerDefaults in appMode.m
+	//To set these defaults, edit Settings.bundle->Root.plist 
 	[appModel initUserDefaults];
 	
 	//Load defaults from UserDefaults
 	[appModel loadUserDefaults];
-	
 	[appModel retain];
 
 	//register for notifications from views
 	NSNotificationCenter *dispatcher = [NSNotificationCenter defaultCenter];
 	[dispatcher addObserver:self selector:@selector(performUserLogin:) name:@"PerformUserLogin" object:nil];
 	[dispatcher addObserver:self selector:@selector(selectGame:) name:@"SelectGame" object:nil];
-	[dispatcher addObserver:self selector:@selector(setGameList:) name:@"ReceivedGameList" object:nil];
 	[dispatcher addObserver:self selector:@selector(performLogout:) name:@"LogoutRequested" object:nil];
 	[dispatcher addObserver:self selector:@selector(displayNearbyObjects:) name:@"NearbyButtonTouched" object:nil];
 
+	//Setup ARView
+	ARViewViewControler *arViewController = [[[ARViewViewControler alloc] initWithNibName:@"ARView" bundle:nil] autorelease];
+	UINavigationController *arNavigationController = [[UINavigationController alloc] initWithRootViewController: arViewController];
+	arNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+	
 	//Setup Tasks View
 	QuestsViewController *questsViewController = [[[QuestsViewController alloc] initWithNibName:@"Quests" bundle:nil] autorelease];
 	UINavigationController *questsNavigationController = [[UINavigationController alloc] initWithRootViewController: questsViewController];
@@ -73,11 +77,6 @@
 	QRScannerViewController *qrScannerViewController = [[[QRScannerViewController alloc] initWithNibName:@"QRScanner" bundle:nil] autorelease];
 	UINavigationController *qrScannerNavigationController = [[UINavigationController alloc] initWithRootViewController: qrScannerViewController];
 	qrScannerNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-
-	//IM View
-	IMViewController *imViewController = [[[IMViewController alloc] initWithNibName:@"IM" bundle:nil] autorelease];
-	UINavigationController *imNavigationController = [[UINavigationController alloc] initWithRootViewController: imViewController];
-	imNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
 	
 	//Logout View
 	LogoutViewController *logoutViewController = [[[LogoutViewController alloc] initWithNibName:@"Logout" bundle:nil] autorelease];
@@ -111,6 +110,7 @@
 										gpsNavigationController,
 										inventoryNavigationController,
 										qrScannerNavigationController,
+										arNavigationController,
 										cameraNavigationController,
 										/* imNavigationController, */
 										gamePickerNavigationController,
@@ -137,7 +137,10 @@
 			tabBarController.view.hidden = YES;
 			[window addSubview:gamePickerNavigationController.view];
 		}
-		else NSLog(@"Appdelegate: Player already logged in and they have a site selected. Go into the default module");
+		else {
+			NSLog(@"Appdelegate: Player already logged in and they have a site selected. Go into the default module");
+			[appModel fetchMediaList];
+		}
 	}
 	else {
 		NSLog(@"Appdelegate: Player not logged in, display login");
@@ -171,6 +174,8 @@
 	if (self.networkAlert != nil) {
 		[self.networkAlert dismissWithClickedButtonIndex:0 animated:YES];
 	}
+	
+
 }
 
 
@@ -178,65 +183,75 @@
 
 - (void) showWaitingIndicator:(NSString *)message {
 	NSLog (@"AppDelegate: Showing Waiting Indicator");
-	
 	if (!self.waitingIndicator) {
 		self.waitingIndicator = [[WaitingIndicatorViewController alloc] initWithNibName:@"WaitingIndicator" bundle:nil];
 	}
-	
 	self.waitingIndicator.message = message;
 	
 	//by adding a subview to window, we make sure it is put on top
-	if (appModel.loggedIn == YES) [self.window addSubview:self.waitingIndicator.view]; 
+	if (appModel.loggedIn == YES) {
+		//[NSThread detachNewThreadSelector:@selector(addSubview:) toTarget:self.window withObject:self.waitingIndicator.view];
+		[self.window addSubview:self.waitingIndicator.view]; 
+	}
 }
 
 - (void) removeWaitingIndicator {
 	NSLog (@"AppDelegate: Removing Waiting Indicator");
-	
 	if (self.waitingIndicator != nil) [self.waitingIndicator.view removeFromSuperview ];
-
-	
 }
 
 
 # pragma mark custom methods, notification handlers
 - (void)newError: (NSString *)text {
-	NSLog(text);
+	NSLog(@"%@", text);
 }
 
-- (void)displayNearbyObjectView:(UIViewController *)nearbyObjectViewController {	
-	nearbyObjectNavigationController = [[UINavigationController alloc] initWithRootViewController: nearbyObjectViewController];
+- (void)displayNearbyObjectView:(UIViewController *)nearbyObjectViewController {
+	nearbyObjectNavigationController = [[UINavigationController alloc] initWithRootViewController:nearbyObjectViewController];
 	nearbyObjectNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
 	
 	//Create a close button
-	nearbyObjectViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel 
-																												target:nearbyObjectNavigationController.view 
-																												action:@selector(removeFromSuperview)];
+	nearbyObjectViewController.navigationItem.leftBarButtonItem = 
+		[[UIBarButtonItem alloc] initWithTitle:@"Back"
+								style: UIBarButtonItemStyleBordered
+								target:nearbyObjectNavigationController.view 
+								action:@selector(removeFromSuperview)];	
 	//Display
 	[window addSubview:nearbyObjectNavigationController.view]; //Didn't display the tab bar below!
 }
 
+
+
+
 - (void)performUserLogin:(NSNotification *)notification {
+	NSLog(@"AppDelegate: Login Requested");
+	
 	NSDictionary *userInfo = notification.userInfo;
 	
-	NSLog([NSString stringWithFormat:@"AppDelegate: Perform Login for: %@ Paswword: %@", [userInfo objectForKey:@"username"], [userInfo objectForKey:@"password"]] );
+	NSLog(@"AppDelegate: Perform Login for: %@ Paswword: %@", [userInfo objectForKey:@"username"], [userInfo objectForKey:@"password"]);
 	appModel.username = [userInfo objectForKey:@"username"];
 	appModel.password = [userInfo objectForKey:@"password"];
-	BOOL loginSuccessful = [appModel login];
-	NSLog([appModel description]);
+
+	[appModel login];
+	
 	//handle login response
-	if(loginSuccessful) {
+	if(appModel.loggedIn) {
 		NSLog(@"AppDelegate: Login Success");
 		[loginViewNavigationController.view removeFromSuperview];
-		[appModel fetchGameList];
-		[window addSubview:gamePickerNavigationController.view];
+		[window addSubview:gamePickerNavigationController.view]; //This will automatically load it's own data
 		gamePickerViewController.view.frame = [UIScreen mainScreen].applicationFrame;
 
 	} else {
-		NSLog(@"AppDelegate: Login Failed");
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Invalid username or password."
-													   delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-		[alert show];	
-		[alert release];
+		NSLog(@"AppDelegate: Login Failed, check for a network issue");
+		if (self.networkAlert) NSLog(@"AppDelegate: Network is down, skip login alert");
+		else {
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Invalid username or password."
+														   delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+			[alert show];	
+			[alert release];
+		}
+
+		
 	}
 	
 }
@@ -246,17 +261,17 @@
 	NSDictionary *userInfo = notification.userInfo;
 	Game *selectedGame = [userInfo objectForKey:@"game"];
 	
-	NSLog([NSString stringWithFormat:@"AppDelegate: Game Selected. '%@' game was selected using '%@' as it's site", selectedGame.name, selectedGame.site]);
+	NSLog(@"AppDelegate: Game Selected. '%@' game was selected using '%@' as it's site", selectedGame.name, selectedGame.site);
 
 	[gamePickerNavigationController.view removeFromSuperview];
 	
 	//Set the model to this game
 	appModel.site = selectedGame.site;
+	appModel.gameId = selectedGame.gameId;
 	
 	//Notify the Server
 	NSLog(@"AppDelegate: Game Selected. Notifying Server");
-	NSURLRequest *request = [appModel getURLForModule:@"RESTSelectGame&event=setGame"];	
-	[appModel fetchURLData:request];
+	[appModel updateServerGameSelected];
 	
 	//Set tabBar to the first item
 	tabBarController.selectedIndex = 0;
@@ -264,29 +279,28 @@
 	//Display the tabBar (and it's content)
 	tabBarController.view.hidden = NO;
 	
-	//Get the visible view controller and make sure it's model has been set
-	UIViewController *viewController = [tabBarController selectedViewController];
+	UINavigationController *navigationController;
 	UIViewController *visibleViewController;
-	if ([viewController isKindOfClass:[UINavigationController class]]) {
-		UINavigationController *navigationController = (UINavigationController*) viewController;
+	
+	//Get the naviation controller and visible view controller
+	if ([tabBarController.selectedViewController isKindOfClass:[UINavigationController class]]) {
+		navigationController = (UINavigationController*)tabBarController.selectedViewController;
 		visibleViewController = [navigationController visibleViewController];
-		[visibleViewController performSelector:@selector(setModel:) withObject:appModel];
 	}
 	else {
-		visibleViewController = viewController;
-		[visibleViewController performSelector:@selector(setModel:) withObject:appModel];
+		navigationController = nil;
+		visibleViewController = tabBarController.selectedViewController;
 	}
-	[appModel updateServerLocationAndfetchNearbyLocationList];
+	
+	NSLog(@"AppDelegate: %@ selected",[visibleViewController title]);
+	[appModel fetchMediaList];
+	
+	//Use setModel to refresh the content
+	if([visibleViewController respondsToSelector:@selector(refresh)]) {
+		[visibleViewController performSelector:@selector(refresh) withObject:nil];
+	}
 }
 
-- (void)setGameList:(NSNotification *)notification {
-    //NSDictionary *loginObject = [notification object];
-	NSDictionary *userInfo = notification.userInfo;
-	NSMutableArray *gameList = [userInfo objectForKey:@"gameList"];
-	NSLog(@"AppDelegate: Setting Game List on controller");
-	[gamePickerViewController setGameList:gameList];
-	[gamePickerViewController slideIn];
-}
 
 - (void)performLogout:(NSNotification *)notification {
     NSLog(@"Performing Logout: Clearing NSUserDefaults and Displaying Login Screen");
@@ -321,10 +335,7 @@
 		visibleViewController = viewController;
 	}
 	
-	//Use setModel to refresh the content
-	if([visibleViewController respondsToSelector:@selector(setModel:)]) {
-		[visibleViewController performSelector:@selector(setModel:) withObject:appModel];
-	}
+	NSLog(@"AppDelegate: %@ selected",[visibleViewController title]);
 	
 	//Hides the existing Controller
 	UIViewController *selViewController = [tabBarController selectedViewController];
@@ -341,12 +352,6 @@
 	   didShowViewController:(UIViewController *)viewController 
 					animated:(BOOL)animated {
 	
-	if([viewController class] == [gamePickerViewController class]) {
-		[viewController performSelector:@selector(setGameList:) withObject:appModel.gameList];
-	}
-	if([viewController respondsToSelector:@selector(setModel:)]) {
-		[viewController performSelector:@selector(setModel:) withObject:appModel];
-	}
 }
 
 #pragma mark Memory Management

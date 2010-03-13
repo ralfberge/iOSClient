@@ -8,37 +8,50 @@
 
 #import "ItemDetailsViewController.h"
 #import "ARISAppDelegate.h"
+#import "Media.h"
+#import "AsyncImageView.h"
 
 @implementation ItemDetailsViewController
-
-@synthesize appModel;
-@synthesize item;
-@synthesize inInventory;
-@synthesize dropButton;
-@synthesize deleteButton;
-@synthesize backButton;
-@synthesize pickupButton;
+@synthesize appModel, item, inInventory, dropButton;
+@synthesize deleteButton, backButton, pickupButton;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-
 	//Show waiting Indicator in own thread so it appears on time
-	[NSThread detachNewThreadSelector: @selector(showWaitingIndicator:) toTarget: (ARISAppDelegate *)[[UIApplication sharedApplication] delegate] withObject: @"Loading..."];	
-	//[(ARISAppDelegate *)[[UIApplication sharedApplication] delegate]showWaitingIndicator:@"Loading..."];
+	//[NSThread detachNewThreadSelector: @selector(showWaitingIndicator:) toTarget: (ARISAppDelegate *)[[UIApplication sharedApplication] delegate] withObject: @"Loading..."];	
+	[(ARISAppDelegate *)[[UIApplication sharedApplication] delegate]showWaitingIndicator:@"Loading..."];
 
-	
 	if (inInventory == YES) {
 		pickupButton.hidden = YES;
 		dropButton.hidden = NO;
 		deleteButton.hidden = NO;
+		
+		if (item.dropable) {
+			dropButton.enabled = YES;
+			dropButton.alpha = 1;
+		}
+		else {
+			dropButton.enabled = NO;
+			dropButton.alpha = .2;
+		}
+		
+		if (item.destroyable) {
+			deleteButton.enabled = YES;
+			deleteButton.alpha = 1;
+		}
+		else {
+			deleteButton.enabled = NO;
+			deleteButton.alpha = .2;
+		}
 	}
 	else {
 		pickupButton.hidden = NO;
 		dropButton.hidden = YES;
 		deleteButton.hidden = YES;
 	}
-	NSString *mediaURL = [appModel getURLString:item.mediaURL];
-	NSLog(@"ItemDetailsViewController: View Loaded. Current item: %@; mediaURL: %@", item.name, mediaURL);
+	
+
+	NSLog(@"ItemDetailsViewController: View Loaded. Current item: %@", item.name);
 
 
 	//Set Up General Stuff
@@ -55,30 +68,25 @@
 	[scrollView setContentSize:CGSizeMake(320, itemDescriptionView.frame.origin.y
 										  + itemDescriptionView.frame.size.height)];
 	
-	if ([item.type isEqualToString: @"Image"]) {
-		NSLog(@"ItemDetailsViewController: Image Layout Selected");
-		//Setup the image view
-		[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-		NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:mediaURL]];
-		[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+	
+	Media *media = [appModel.mediaList objectForKey:[NSNumber numberWithInt:item.mediaId]];
 
-		UIImage* image = [[UIImage alloc] initWithData:imageData];
-		UIImageView* imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 220)];
-		imageView.image = image;
+	if ([media.type isEqualToString: @"Image"] && media.url) {
+		NSLog(@"ItemDetailsViewController: Image Layout Selected");
 		
+		AsyncImageView* mediaImageView = [[AsyncImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 220)];
+		
+		[mediaImageView loadImageFromMedia:media];
+
 		//Add the image view
-		[scrollView addSubview:imageView];
+		[scrollView addSubview:mediaImageView];
 		
-		//clean up
-		[imageData release];
-		[image release];
-		[imageView release];
 	}
-	else if ([item.type isEqualToString: @"AV"]) {
+	else if (([media.type isEqualToString: @"Video"] || [media.type isEqualToString: @"Audio"]) && media.url) {
 		NSLog(@"ItemDetailsViewController:  Video Layout Selected");
 
 		//Create movie player object
-		mMoviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:mediaURL]];
+		mMoviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:media.url]];
 		
 		// Register to receive a notifications
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePreloadDidFinish:) name:MPMoviePlayerContentPreloadDidFinishNotification object:nil];
@@ -96,21 +104,13 @@
 		[button setImage:[UIImage imageNamed:@"playArrow.png"] forState:UIControlStateNormal];
 		[scrollView addSubview:button];		
 	}
-	
-	
-	//Notify server that the item was viewed
-	NSURLRequest *request = [appModel getURLForModule:[ NSString stringWithFormat:@"Inventory&controller=SimpleREST&event=viewedItem&item_id=%d", self.item.itemId]];
-	NSLog(@"ItemDetialsViewController: Notifying server this item was viewed using URL:%@",request.URL.absoluteString);
-	[NSThread detachNewThreadSelector: @selector(fetchURLData:) toTarget: appModel withObject: request];	
-	//[appModel fetchURLData:request];
-	
-	[mediaURL release];
-	
+
 	//Stop Waiting Indicator
 	//[NSThread detachNewThreadSelector: @selector(removeWaitingIndicator) toTarget: (ARISAppDelegate *)[[UIApplication sharedApplication] delegate] withObject: nil];
 	[(ARISAppDelegate *)[[UIApplication sharedApplication] delegate] removeWaitingIndicator];
 	
-	
+	//Notify the server this item was displayed
+	[appModel updateServerItemViewed:item.itemId];
 	[super viewDidLoad];
 }
 
@@ -132,48 +132,43 @@
 - (void) moviePlayBackDidFinish:(NSNotification*)notification { }
 
 - (IBAction)dropButtonTouchAction: (id) sender{
-	//Fire off a request to the REST Module and display an alert when it is successfull
-	NSString *baseURL = [appModel getURLStringForModule:@"Inventory"];
-	NSString *URLparams = [ NSString stringWithFormat:@"&controller=SimpleREST&event=dropItemHere&item_id=%d", self.item.itemId];
-	NSString *fullURL = [ NSString stringWithFormat:@"%@%@", baseURL, URLparams];
+	NSLog(@"ItemDetailsVC: Drop Button Pressed");
 	
-	NSLog([NSString stringWithFormat:@"ItemDetailsViewController: Dropping Item Here using REST Call: %@", fullURL ]);
+	[appModel updateServerDropItemHere:self.item.itemId];
+
 	
-	NSString *result = [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:fullURL]];
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Item Dropped" message: @"Your Item was dropped here on the map. Other players will not see this object on their map." delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];
-	
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Item Dropped" 
+										message: @"Your Item was dropped here on the map for other players to see." 
+										delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];
 	[alert show];
-	[result release];
 	[alert release];
 	
+	//Refresh Map Locations (To add this item)
+	[appModel fetchLocationList];
+	
+	//Refresh the Nearby Locations (This item should now be part of the list)
+	[appModel updateServerLocationAndfetchNearbyLocationList];
+	
+	//Refresh the inventory (To remove this item)
+	[appModel fetchInventory];
 	
 	//Dismiss Item Details View
 	[self.navigationController popToRootViewControllerAnimated:YES];
-	
-	//Refresh the Nearby Locations
-	[appModel updateServerLocationAndfetchNearbyLocationList];
-	
-	//Refresh Map Locations
-	[appModel fetchLocationList];
-	
-	//Refresh the inventory
-	[appModel fetchInventory];
+
 }
 
 - (IBAction)deleteButtonTouchAction: (id) sender{
-	//Fire off a request to the REST Module and display an alert when it is successfull
-	NSString *baseURL = [appModel getURLStringForModule:@"Inventory"];
-	NSString *URLparams = [ NSString stringWithFormat:@"&controller=SimpleREST&event=destroyPlayerItem&item_id=%d", self.item.itemId];
-	NSString *fullURL = [ NSString stringWithFormat:@"%@%@", baseURL, URLparams];
+	NSLog(@"ItemDetailsVC: Destroy Button Pressed");
+
+	[appModel updateServerDestroyItem:self.item.itemId];
 	
-	NSLog([NSString stringWithFormat:@"ItemDetailsViewController: Deleting all Items for this Player on server: %@", fullURL ]);
 	
-	NSString *result = [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:fullURL]];
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Item destroyed" message: @"This object was removed from your inventory" delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];
-	
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Item Destroyed" 
+													message: @"This object was removed from your inventory" 
+												   delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];
 	[alert show];
-	[result release];
 	[alert release];
+	 
 	
 	//Refresh the inventory
 	[appModel fetchInventory];
@@ -194,27 +189,20 @@
 - (IBAction)pickupButtonTouchAction: (id) sender{
 	NSLog(@"ItemDetailsViewController: pickupButtonTouched");
 	
-	//Fire off a request to the REST Module and display an alert when it is successfull
-	NSString *baseURL = [appModel getURLStringForModule:@"Inventory"];
-	NSString *URLparams = [NSString stringWithFormat:@"&controller=SimpleREST&event=pickupItem&item_id=%d&location_id=%d", self.item.itemId, self.item.locationId];
-	NSString *fullURL = [NSString stringWithFormat:@"%@%@", baseURL, URLparams];
+	[appModel updateServerPickupItem:self.item.itemId fromLocation:self.item.locationId];
 	
-	NSLog([NSString stringWithFormat:@"ItemDetailsViewController: Telling server to pickup this item using URL: %@", fullURL ]);
-	
-	NSString *result = [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:fullURL]];
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Picked up an Item" message: @"It is available in your inventory" delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];
 	
 	[alert show];
-	[result release];
 	[alert release];
 	
-	//Refresh the Nearby Locations
-	[appModel updateServerLocationAndfetchNearbyLocationList];
-	
-	//Refresh Map Locations
+	//Refresh Map Locations (to update quantities on the map)
 	[appModel fetchLocationList];
 	
-	//Refresh the inventory
+	//Refresh the Nearby Locations (in case this item is no longer here)
+	[appModel updateServerLocationAndfetchNearbyLocationList];
+	
+	//Refresh the inventory (to show the new item)
 	[appModel fetchInventory];
 	
 	[self.navigationController.view removeFromSuperview];

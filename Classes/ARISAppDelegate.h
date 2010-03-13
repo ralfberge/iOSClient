@@ -14,7 +14,6 @@
 #import "MyCLController.h"
 
 #import "model/Game.h"
-#import "NearbyLocation.h"
 #import "NearbyBar.h"
 #import "Item.h"
 #import "ItemDetailsViewController.h"
@@ -23,8 +22,8 @@
 #import "GPSViewController.h"
 #import "InventoryListViewController.h"
 #import "CameraViewController.h"
+#import "ARViewViewControler.h"
 #import "QRScannerViewController.h"
-#import "IMViewController.h"
 #import "GamePickerViewController.h"
 #import "LogoutViewController.h"
 #import "DeveloperViewController.h"

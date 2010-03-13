@@ -19,19 +19,13 @@
 @synthesize forcedDisplay;
 
 @synthesize itemId;
+@synthesize mediaId;
 @synthesize locationId;
 @synthesize description;
-@synthesize type;
-@synthesize mediaURL;
-@synthesize iconURL;
+@synthesize iconMediaId;
 
-- (void) setItemId:(NSString *)fromStringValue {
-	itemId = [fromStringValue intValue];
-}
-
-- (void) setLocationId:(NSString *)fromStringValue {
-	locationId = [fromStringValue intValue];
-}
+@synthesize dropable;
+@synthesize	destroyable;
 
 -(nearbyObjectKind) kind {
 	return NearbyObjectItem;
@@ -53,16 +47,13 @@
 
 	//Have AppDelegate display
 	[appDelegate displayNearbyObjectView:itemDetailsViewController];
-
 	
 }
+
 
 - (void)dealloc {
 	[name release];
 	[description release];
-	[type release];
-	[mediaURL release];
-	[iconURL release];
     [super dealloc];
 }
 

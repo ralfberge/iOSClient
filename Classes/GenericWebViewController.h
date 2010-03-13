@@ -14,14 +14,9 @@
 	UIWebView *webview;
 	AppModel *appModel;	
 }
-
--(void) setModel:(AppModel *)model;
--(void) setURL:(NSString*)urlString;
-
-
-
+@property(readwrite, retain) AppModel	*appModel;
 @property (nonatomic, retain) IBOutlet UIWebView *webview;
 
-
+-(void) setURL:(NSString*)urlString;
 
 @end

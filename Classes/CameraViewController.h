@@ -11,22 +11,14 @@
 
 
 @interface CameraViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
-	NSString *moduleName;
-	AppModel *appModel;
-	
+	AppModel *appModel;	
 	IBOutlet UIButton *takePhotoButton;
 	IBOutlet UIButton *uploadPhotoButton;
     IBOutlet UIImageView *image;
     UIImagePickerController *imagePickerController;
 }
-
-
-- (void) setModel:(AppModel *)model;
-- (IBAction)cameraButtonTouchAction;
-
-
-@property(copy, readwrite) NSString *moduleName;
 @property (nonatomic, retain) UIImagePickerController *imagePickerController;
 
+- (IBAction)cameraButtonTouchAction;
 
 @end
