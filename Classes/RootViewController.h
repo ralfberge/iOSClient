@@ -51,6 +51,8 @@
 #import "PTPusherEvent.h"
 #import "LoadingViewController.h"
 
+#import "AR2ViewController.h"
+
 @interface RootViewController : UIViewController<UIApplicationDelegate, UITabBarControllerDelegate, UINavigationControllerDelegate, MFMailComposeViewControllerDelegate,PTPusherDelegate> {
     UITabBarController *tabBarController;
     UIViewController *defaultViewControllerForMainTabBar;

@@ -51,13 +51,15 @@ BOOL isLoading;
         [self addTarget:self action:@selector(playMovie:) forControlEvents:UIControlEventTouchUpInside];
         
         //Load the background
-        if (self.media.image) {
-            NSLog(@"AsyncMoviePlayerButton: init: thumbnail was in media.image cache");
-            UIImage *videoThumbSized = [[UIImage imageWithData: self.media.image] scaleToSize:self.frame.size];        
-            [self setBackgroundImage:videoThumbSized forState:UIControlStateNormal];
-        }
-        
-        else if ([media.type isEqualToString:kMediaTypeVideo]){
+// POSSIBLE CHANGE MADE
+//        if (self.media.image) {
+//            NSLog(@"AsyncMoviePlayerButton: init: thumbnail was in media.image cache");
+//            UIImage *videoThumbSized = [[UIImage imageWithData: self.media.image] scaleToSize:self.frame.size];        
+//            [self setBackgroundImage:videoThumbSized forState:UIControlStateNormal];
+//        }
+//        
+//        else 
+        if ([media.type isEqualToString:kMediaTypeVideo]){
           //  if(!isLoading){
             NSLog(@"AsyncMoviePlayerButton: fetching thumbnail for a video ");
           //  isLoading = YES;

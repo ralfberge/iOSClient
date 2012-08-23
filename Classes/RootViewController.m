@@ -99,6 +99,12 @@ BOOL isShowingNotification;
         //UINavigationController *arNavigationController = [[UINavigationController alloc] initWithRootViewController: arViewController];
         //arNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
         
+        AR2ViewController *arVC = [[AR2ViewController alloc] initWithNibName:@"AR2ViewController" bundle:nil];
+        UINavigationController *arNavCtrlr = [[UINavigationController alloc] initWithRootViewController:arVC];
+        arNavCtrlr.navigationBar.barStyle = UIBarStyleBlackOpaque;
+        
+        NSLog(@"%@\n%@", [arVC description], [arNavCtrlr description]);
+        
         //Setup Quests View
         QuestsViewController *questsViewController = [[QuestsViewController alloc] initWithNibName:@"Quests" bundle:nil];
         UINavigationController *questsNavigationController = [[UINavigationController alloc] initWithRootViewController: questsViewController];
@@ -172,17 +178,19 @@ BOOL isShowingNotification;
                                                  gpsNavigationController,
                                                  inventoryNavigationController,
                                                  qrScannerNavigationController,
-                                                 //arNavigationController,
                                                  attributesNavigationController,
                                                  notesNavigationController,
                                                  bogusSelectGameViewController,
                                                  logoutNavigationController,
+                                                 arNavCtrlr,
                                                  //developerNavigationController,
                                                  nil];
         self.defaultViewControllerForMainTabBar = questsNavigationController;
         self.tabBarController.view.hidden = YES;
         [self.view addSubview:self.tabBarController.view];
         [AppModel sharedAppModel].defaultGameTabList = self.tabBarController.customizableViewControllers;
+        
+        NSLog(@"counts: %i, %i", [self.tabBarController.viewControllers count], [[AppModel sharedAppModel].defaultGameTabList count]);
         
         //Setup the Game Selection Tab Bar
         
@@ -534,7 +542,7 @@ BOOL isShowingNotification;
     if([AppModel sharedAppModel].tabsReady){
         NSMutableArray *tabs = [NSMutableArray arrayWithArray:self.tabBarController.viewControllers];
         
-        if (yesOrNo) {
+        if (YES) {
             NSLog(@"AppDelegate: showNearbyTab: YES");
             if (![tabs containsObject:self.nearbyObjectsNavigationController]) {
                 [tabs insertObject:self.nearbyObjectsNavigationController atIndex:0];
@@ -687,6 +695,7 @@ BOOL isShowingNotification;
         else if([tmpTab.tabName isEqualToString:@"PLAYER"]) tmpTab.tabName = NSLocalizedString(@"PlayerTitleKey",@"");
         else if([tmpTab.tabName isEqualToString:@"NOTE"]) tmpTab.tabName = NSLocalizedString(@"NotebookTitleKey",@"");
         else if([tmpTab.tabName isEqualToString:@"PICKGAME"]) tmpTab.tabName = NSLocalizedString(@"GamePickerTitleKey",@"");
+        else if([tmpTab.tabName isEqualToString:@"ARVIEW"]) tmpTab.tabName = @"AR View"; //LOCALIZE ME!!!
         else{
             tmpTab.tabIndex = 0;
         }
@@ -700,6 +709,7 @@ BOOL isShowingNotification;
         for(int x = 0; x < [[AppModel sharedAppModel].defaultGameTabList count];x++){
             
             tempNav = (UINavigationController *)[[AppModel sharedAppModel].defaultGameTabList objectAtIndex:x];
+            NSLog(@"%i, %@, %@", x, tempNav.navigationItem.title, tmpTab.tabName);
             if([tempNav.navigationItem.title isEqualToString:tmpTab.tabName])newCustomVC = [newCustomVC arrayByAddingObject:tempNav];
         }
     }

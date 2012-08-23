@@ -157,6 +157,9 @@
 
 	}
 	
+//POSSIBLE CHANGE 
+    [AppModel sharedAppModel].nearbyLocationsList = nearbyLocationList;
+
 	
 	//Save this nearby list
 	self.oldNearbyLocationList = nearbyLocationList;

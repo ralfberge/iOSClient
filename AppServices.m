@@ -2327,7 +2327,10 @@ NSString *const kARISServerServicePackage = @"v1";
     CLLocation *tmpLocation = [[CLLocation alloc] initWithLatitude:[[locationDictionary valueForKey:@"latitude"] doubleValue]
                                                          longitude:[[locationDictionary valueForKey:@"longitude"] doubleValue]];
     location.location = tmpLocation;
-    location.error = [[locationDictionary valueForKey:@"error"] doubleValue];
+
+// POSSIBLE CHANGE 
+    NSLog(@"VALUE FOR KEY ERROR: %f", [[locationDictionary valueForKey:@"error"] doubleValue]);
+    location.error = 200.0;
     location.objectType = [locationDictionary valueForKey:@"type"];
     location.objectId = [[locationDictionary valueForKey:@"type_id"] intValue];
     location.hidden = [[locationDictionary valueForKey:@"hidden"] boolValue];
@@ -2494,8 +2497,14 @@ NSString *const kARISServerServicePackage = @"v1";
 		tempTabList = [tempTabList arrayByAddingObject:tmpTab];
 		//[node release];
 	}
+    
+    Tab *tmpTab2 = [self parseTabFromDictionary:[NSDictionary dictionaryWithObjectsAndKeys:@"ARVIEW", @"tab", [NSNumber numberWithInt:9], @"tab_index", nil]];
+    tempTabList = [tempTabList arrayByAddingObject:tmpTab2];
 	
 	[AppModel sharedAppModel].gameTabList = tempTabList;
+
+    NSLog(@"should be 9? : %i", [[AppModel sharedAppModel].gameTabList count]);
+    
     [[RootViewController sharedRootViewController] changeTabBar];
 	//[tempTabList release];
     

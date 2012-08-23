@@ -104,6 +104,7 @@
  //   MPMoviePlayerController *player = aNotification.object;
     UIImage *videoThumbSized = [videoThumb scaleToSize:self.frame.size];        
     self.media.image = UIImageJPEGRepresentation(videoThumbSized,1.0 ) ;     
+//POSSIBLE CHANGE: comment out next line...
     [self updateViewWithNewImage:[UIImage imageWithData:self.media.image]];
             
  //   if (e) {

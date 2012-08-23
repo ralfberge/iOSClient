@@ -14,7 +14,7 @@
 
 @implementation NearbyObjectARCoordinate
 
-@synthesize mediaId;
+@synthesize mediaId, node;
 
 + (NearbyObjectARCoordinate *)coordinateWithNearbyLocation:(Location *)aNearbyLocation {
 	
@@ -36,7 +36,10 @@
 	//Carry on with the normal stuff
 	newCoordinate.geoLocation = tempLocation;
 	newCoordinate.title = aNearbyLocation.name;
-	newCoordinate.mediaId = aNearbyLocation.iconMediaId;
+	
+    newCoordinate.mediaId = aNearbyLocation.iconMediaId;
+// POSSIBLE CHANGE MADE
+    newCoordinate.node = nil; // NOT ASSIGNED HERE
 	
 	return newCoordinate;		
 }

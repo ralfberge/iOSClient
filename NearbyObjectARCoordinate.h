@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ARGeoCoordinate.h"
 #import "Location.h"
+#import "Node.h"
 
 
 @interface NearbyObjectARCoordinate : ARGeoCoordinate {
@@ -16,6 +17,8 @@
 }
 
 @property(readwrite, assign) int mediaId;
+// POSSIBLE CHANGE MADE
+@property(readwrite, assign) Node *node;
 
 + (NearbyObjectARCoordinate *)coordinateWithNearbyLocation:(Location *)aNearbyLocation;
 
