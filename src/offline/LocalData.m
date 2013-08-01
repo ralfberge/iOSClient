@@ -32,6 +32,8 @@
 #import "MOverlay.h"
 #import "MOverlayTile.h"
 
+#import "NSDictionary+ValidParsers.h"
+
 #if ! __has_feature(objc_arc)
 #error This file must be compiled with ARC
 #endif
@@ -482,7 +484,7 @@ NSString * const kPSC_TAKE_ITEM = @"TAKE_ITEM";
         return;
     }
     
-    NSURL *url = [NSURL URLWithString:@"server/sync/update.php" relativeToURL:[AppModel sharedAppModel].serverURL];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/sync/update.php", [AppModel sharedAppModel].serverURL]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60.0];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[json dataUsingEncoding:NSUTF8StringEncoding]];
@@ -549,15 +551,15 @@ NSString * const kPSC_TAKE_ITEM = @"TAKE_ITEM";
     if (_storingLocally) return;
     _storingLocally = YES;
     _gameId = game.gameId;
-    
-    NSString *urlString = @"server/sync/";
+
     NSString *str = [NSString stringWithFormat:@"action=get_all&id=%d&player_id=%d", _gameId, [AppModel sharedAppModel].player.playerId];
-    NSURL *url = [NSURL URLWithString:urlString relativeToURL:[AppModel sharedAppModel].serverURL];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/sync/", [AppModel sharedAppModel].serverURL]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60.0];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[str dataUsingEncoding:NSUTF8StringEncoding]];
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request finishBlock:^(NSData *data){
-        //NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"%@", jsonString);
         NSError *error;
         NSDictionary *info = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         block(@"Storing Game", 0.0, NO);
@@ -609,22 +611,34 @@ NSString * const kPSC_TAKE_ITEM = @"TAKE_ITEM";
             NSLog(@"%@", [error userInfo]);
         }
         
-        // update medias
+        NSMutableSet *lookup = [[NSMutableSet alloc] init];
         dispatch_queue_t q_update_media = dispatch_queue_create("edu.amherst.update_media", NULL);
         dispatch_semaphore_t fd_sema = dispatch_semaphore_create(1);
-        size_t index = 0;
-        for (MMedia *media in medias) {
-            index++;
-            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-            dispatch_async(q_update_media, ^{
-                dispatch_semaphore_wait(fd_sema, DISPATCH_TIME_FOREVER);
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self updateMedia:media semaphore:fd_sema];
-                    block([NSString stringWithFormat:@"Downloading media files: %ld / %d",  index, [medias count]], (float)index / (float)[medias count], NO);
+        for (int index = 0; index < [medias count]; ++index)
+        {
+            MMedia *curr = [medias objectAtIndex:index];
+            NSString *identifier = [NSString stringWithFormat:@"%d", [curr.mediaId intValue]];
+            
+            // this is very fast constant time lookup in a hash table
+            if ([lookup containsObject:identifier])
+            {
+                [medias removeObjectAtIndex:index];
+                --index;
+            }
+            else
+            {
+                [lookup addObject:identifier];
+                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+                dispatch_async(q_update_media, ^{
+                    dispatch_semaphore_wait(fd_sema, DISPATCH_TIME_FOREVER);
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self updateMedia:curr semaphore:fd_sema];
+                        block([NSString stringWithFormat:@"Downloading media files: %d / %d",  index + 1, [medias count]], (float)(index + 1) / (float)[medias count], NO);
+                    });
                 });
-            });
+            }
         }
-        index = 0;
+        
         dispatch_async(q_update_media, ^{
             dispatch_semaphore_wait(fd_sema, DISPATCH_TIME_FOREVER);
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -781,9 +795,9 @@ NSString * const kPSC_TAKE_ITEM = @"TAKE_ITEM";
             newRequirement.contentType = [requirementDictionary objectForKey:@"content_type"];
             newRequirement.contentId = [NSNumber numberWithInt:[[requirementDictionary objectForKey:@"content_id"] intValue]];
             newRequirement.requirement = [requirementDictionary objectForKey:@"requirement"];
-            newRequirement.requirementDetail1 = [requirementDictionary objectForKey:@"requirement_detail_1"];
-            newRequirement.requirementDetail2 = [requirementDictionary objectForKey:@"requirement_detail_2"];
-            newRequirement.requirementDetail3 = [requirementDictionary objectForKey:@"requirement_detail_3"];
+            newRequirement.requirementDetail1 = [requirementDictionary validStringForKey: @"requirement_detail_1"];
+            newRequirement.requirementDetail2 = [requirementDictionary validStringForKey: @"requirement_detail_2"];
+            newRequirement.requirementDetail3 = [requirementDictionary validStringForKey: @"requirement_detail_3"];
             newRequirement.notOperator = [requirementDictionary objectForKey:@"not_operator"];
             newRequirement.groupOperator = [requirementDictionary objectForKey:@"group_operator"];
             newRequirement.game = game;
@@ -1426,9 +1440,8 @@ NSString * const kPSC_TAKE_ITEM = @"TAKE_ITEM";
 
 - (void)updateMedia:(MMedia *)media semaphore:(dispatch_semaphore_t)semaphore {
     // first get the info
-    NSString *urlString = @"server/sync/";
     NSString *str = [NSString stringWithFormat:@"action=get_media_info&id=%@&gameId=%lu", media.mediaId, (unsigned long)_gameId];
-    NSURL *url = [NSURL URLWithString:urlString relativeToURL:[AppModel sharedAppModel].serverURL];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/sync/", [AppModel sharedAppModel].serverURL]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60.0];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[str dataUsingEncoding:NSUTF8StringEncoding]];
@@ -1445,6 +1458,8 @@ NSString * const kPSC_TAKE_ITEM = @"TAKE_ITEM";
         NSNumber *isDefault = [mediaData objectForKey:@"is_default"];
         NSString *filePath = [mediaData objectForKey:@"file_path"];
         NSString *path = [documentsDirectory stringByAppendingPathComponent:filePath];
+        
+        NSLog(@"Filepath: \n%@\nPath:\n%@", filePath, path);
         
         BOOL downloaded = NO;
         if ([media.filePath isEqualToString:filePath] && [[NSFileManager defaultManager] fileExistsAtPath:path]) {
@@ -1472,7 +1487,7 @@ NSString * const kPSC_TAKE_ITEM = @"TAKE_ITEM";
                 if (![[NSFileManager defaultManager] fileExistsAtPath:[documentsDirectory stringByAppendingPathComponent:dirName]]) {
                     [[NSFileManager defaultManager] createDirectoryAtPath:[documentsDirectory stringByAppendingPathComponent:dirName] withIntermediateDirectories:NO attributes:nil error:&error];
                 }
-                BOOL result = [data writeToFile:path atomically:NO];
+                BOOL result =  [data writeToFile:path options:NSDataWritingAtomic error:&error];//[data writeToFile:path atomically:NO];
                 if (result) {                    
                     NSManagedObjectContext *context = [self managedObjectContext];
                     media.filePath = filePath;
