@@ -33,6 +33,7 @@
 {
     if(self = [super initWithNibName:@"NearbyObjectsViewController" bundle:nil])
     {
+        self.tabID = @"NEARBY";
         delegate = d;
         [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"radarTabBarSelected"] withFinishedUnselectedImage:[UIImage imageNamed:@"radarTabBarUnselected"]];
         
@@ -54,11 +55,6 @@
 {
 	[self refresh];
     self.tabBarItem.badgeValue = nil;
-}
-
-- (void) dismissTutorial
-{
-    //if(delegate) [delegate dismissTutorial];
 }
 
 - (void) refresh
@@ -113,12 +109,6 @@
     {
         self.navigationController.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d",[self.nearbyLocationsList count]];
         [delegate showNearbyObjectsTab];
-        
-        if (![AppModel sharedAppModel].hasSeenNearbyTabTutorial)
-        {
-            [AppModel sharedAppModel].hasSeenNearbyTabTutorial = YES;
-            [self performSelector:@selector(dismissTutorial) withObject:nil afterDelay:5.0];
-        }
     }
     
     [nearbyTable reloadData];

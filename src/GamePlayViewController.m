@@ -231,7 +231,7 @@
         tmpTab = [gamePlayTabs objectAtIndex:i];
         if(tmpTab.tabIndex < 1) continue;
         
-        if ([tmpTab.tabName isEqualToString:@"QUESTS"])
+        if([tmpTab.tabName isEqualToString:@"QUESTS"])
         {
             //if uses icon quest view
             if((BOOL)tmpTab.tabDetail1)
@@ -304,6 +304,22 @@
     self.gamePlayTabBarController.tabBar.selectedImageTintColor = [UIColor ARISColorScarlet];
     
     self.gamePlayTabBarController.selectedIndex = 0;
+}
+
+- (void) displayScannerWithPrompt:(NSString *)p
+{
+    ARISGamePlayTabBarViewController *vc;
+    ARISNavigationController *nc;
+    for(int i = 0; i < [self.gamePlayTabBarController.viewControllers count]; i++)
+    {
+        nc = [self.gamePlayTabBarController.viewControllers objectAtIndex:i];
+        vc = [[nc childViewControllers] objectAtIndex:0];
+        if([vc.tabID isEqualToString:@"QR"])
+        {
+            self.gamePlayTabBarController.selectedIndex = i;
+            [(DecoderViewController *)vc launchScannerWithPrompt:p];
+        }
+    }
 }
 
 - (BOOL) displayGameObject:(id<GameObjectProtocol>)g fromSource:(id)s
