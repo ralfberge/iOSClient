@@ -91,6 +91,530 @@
 		7152F674177B9BCB001B0CAE /* qrScannerTabBarUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F66F177B9BCB001B0CAE /* qrScannerTabBarUnselected@2x.png */; };
 		8902C4A917AC09E700C80803 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = 8902C4A717AC09E700C80803 /* dsym_upload.sh */; };
 		8902C4AA17AC09E700C80803 /* libCrittercism_v4_0_6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8902C4A817AC09E700C80803 /* libCrittercism_v4_0_6.a */; };
+		890B868517AC360000069298 /* AccountSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7066172739D60074CC21 /* AccountSettingsViewController.m */; };
+		890B868617AC360000069298 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7068172739D60074CC21 /* ChangePasswordViewController.m */; };
+		890B868717AC360000069298 /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC706B172739D60074CC21 /* ForgotPasswordViewController.m */; };
+		890B868817AC360000069298 /* PlayerSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC706E172739D60074CC21 /* PlayerSettingsViewController.m */; };
+		890B868917AC360000069298 /* ARISAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7072172739D60074CC21 /* ARISAppDelegate.m */; };
+		890B868A17AC360000069298 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7075172739D60074CC21 /* Game.m */; };
+		890B868B17AC360000069298 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7077172739D60074CC21 /* Item.m */; };
+		890B868C17AC360000069298 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7079172739D60074CC21 /* Location.m */; };
+		890B868D17AC360000069298 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC707B172739D60074CC21 /* Media.m */; };
+		890B868E17AC360000069298 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC707D172739D60074CC21 /* Node.m */; };
+		890B868F17AC360000069298 /* NodeOption.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC707F172739D60074CC21 /* NodeOption.m */; };
+		890B869017AC360000069298 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7081172739D60074CC21 /* Note.m */; };
+		890B869117AC360000069298 /* NoteContent.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7083172739D60074CC21 /* NoteContent.m */; };
+		890B869217AC360000069298 /* Npc.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7085172739D60074CC21 /* Npc.m */; };
+		890B869317AC360000069298 /* Overlay.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7087172739D60074CC21 /* Overlay.m */; };
+		890B869417AC360000069298 /* Panoramic.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7089172739D60074CC21 /* Panoramic.m */; };
+		890B869517AC360000069298 /* PanoramicMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC708B172739D60074CC21 /* PanoramicMedia.m */; };
+		890B869617AC360000069298 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC708D172739D60074CC21 /* Player.m */; };
+		890B869717AC360000069298 /* Quest.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC708F172739D60074CC21 /* Quest.m */; };
+		890B869817AC360000069298 /* Tab.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7091172739D60074CC21 /* Tab.m */; };
+		890B869917AC360000069298 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7093172739D60074CC21 /* Tag.m */; };
+		890B869A17AC360000069298 /* WebPage.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7095172739D60074CC21 /* WebPage.m */; };
+		890B869B17AC360000069298 /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7098172739D60074CC21 /* Logger.m */; };
+		890B869C17AC360000069298 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC709B172739D60074CC21 /* Comment.m */; };
+		890B869D17AC360000069298 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC709D172739D60074CC21 /* CommentCell.m */; };
+		890B869E17AC360000069298 /* CommentsFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70A0172739D60074CC21 /* CommentsFormCell.m */; };
+		890B869F17AC360000069298 /* commentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70A4172739D60074CC21 /* commentsViewController.m */; };
+		890B86A017AC360000069298 /* GameDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70A7172739D60074CC21 /* GameDetailsViewController.m */; };
+		890B86A117AC360000069298 /* RatingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70A9172739D60074CC21 /* RatingCell.m */; };
+		890B86A217AC360000069298 /* SCRRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70AD172739D60074CC21 /* SCRRatingView.m */; };
+		890B86A317AC360000069298 /* GamePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70B0172739D60074CC21 /* GamePickerCell.m */; };
+		890B86A417AC360000069298 /* GamePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70B3172739D60074CC21 /* GamePickerViewController.m */; };
+		890B86A517AC360000069298 /* GamePickerNearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70B6172739D60074CC21 /* GamePickerNearbyViewController.m */; };
+		890B86A617AC360000069298 /* GamePickerPopularViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70BA172739D60074CC21 /* GamePickerPopularViewController.m */; };
+		890B86A717AC360000069298 /* GamePickerRecentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70BE172739D60074CC21 /* GamePickerRecentViewController.m */; };
+		890B86A817AC360000069298 /* GamePickerSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70C2172739D60074CC21 /* GamePickerSearchViewController.m */; };
+		890B86A917AC360000069298 /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70C7172739D60074CC21 /* LoadingViewController.m */; };
+		890B86AA17AC360000069298 /* LoginViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = AABC70CC172739D60074CC21 /* LoginViewController.mm */; };
+		890B86AB17AC360000069298 /* SelfRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70CF172739D60074CC21 /* SelfRegistrationViewController.m */; };
+		890B86AC17AC360000069298 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = AABC70D0172739D60074CC21 /* main.mm */; };
+		890B86AD17AC360000069298 /* ARISMoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70D4172739D60074CC21 /* ARISMoviePlayerViewController.m */; };
+		890B86AE17AC360000069298 /* AsyncMediaImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70D6172739D60074CC21 /* AsyncMediaImageView.m */; };
+		890B86AF17AC360000069298 /* AsyncMediaPlayerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70D8172739D60074CC21 /* AsyncMediaPlayerButton.m */; };
+		890B86B017AC360000069298 /* AppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70DD172739D60074CC21 /* AppModel.m */; };
+		890B86B117AC360000069298 /* AttributesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70E0172739D60074CC21 /* AttributesModel.m */; };
+		890B86B217AC360000069298 /* InventoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70E3172739D60074CC21 /* InventoryModel.m */; };
+		890B86B317AC360000069298 /* LocationsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70E6172739D60074CC21 /* LocationsModel.m */; };
+		890B86B417AC360000069298 /* MediaCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70E9172739D60074CC21 /* MediaCache.m */; };
+		890B86B517AC360000069298 /* QuestsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70EC172739D60074CC21 /* QuestsModel.m */; };
+		890B86B617AC360000069298 /* MyCLController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70EE172739D60074CC21 /* MyCLController.m */; };
+		890B86B717AC360000069298 /* NodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70F9172739D60074CC21 /* NodeViewController.m */; };
+		890B86B817AC360000069298 /* DialogScript.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC70FD172739D60074CC21 /* DialogScript.m */; };
+		890B86B917AC360000069298 /* Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7101172739D60074CC21 /* Scene.m */; };
+		890B86BA17AC360000069298 /* SceneParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7103172739D60074CC21 /* SceneParser.m */; };
+		890B86BB17AC360000069298 /* PanoramicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7106172739D60074CC21 /* PanoramicViewController.m */; };
+		890B86BC17AC360000069298 /* GameNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC710E172739D60074CC21 /* GameNotificationViewController.m */; };
+		890B86BD17AC360000069298 /* PopOverContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7110172739D60074CC21 /* PopOverContentView.m */; };
+		890B86BE17AC360000069298 /* PopOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7112172739D60074CC21 /* PopOverViewController.m */; };
+		890B86BF17AC360000069298 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC711E172739D60074CC21 /* RootViewController.m */; };
+		890B86C017AC360000069298 /* AppServices.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7121172739D60074CC21 /* AppServices.m */; };
+		890B86C117AC360000069298 /* ARISUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7123172739D60074CC21 /* ARISUploader.m */; };
+		890B86C217AC360000069298 /* ARISURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7125172739D60074CC21 /* ARISURLConnection.m */; };
+		890B86C317AC360000069298 /* JSONConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7127172739D60074CC21 /* JSONConnection.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		890B86C417AC360000069298 /* ServiceResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7129172739D60074CC21 /* ServiceResult.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		890B86C517AC360000069298 /* UploadContent.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC712B172739D60074CC21 /* UploadContent.m */; };
+		890B86C617AC360000069298 /* UploadContent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AABC712C172739D60074CC21 /* UploadContent.xcdatamodeld */; };
+		890B86C717AC360000069298 /* UploadMan.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7131172739D60074CC21 /* UploadMan.m */; };
+		890B86C817AC360000069298 /* ARCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7135172739D60074CC21 /* ARCoordinate.m */; };
+		890B86C917AC360000069298 /* ARGeoCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7137172739D60074CC21 /* ARGeoCoordinate.m */; };
+		890B86CA17AC360000069298 /* ARGeoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7139172739D60074CC21 /* ARGeoViewController.m */; };
+		890B86CB17AC360000069298 /* ARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC713C172739D60074CC21 /* ARViewController.m */; };
+		890B86CC17AC360000069298 /* ARViewViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC713E172739D60074CC21 /* ARViewViewControler.m */; };
+		890B86CD17AC360000069298 /* NearbyObjectARCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7140172739D60074CC21 /* NearbyObjectARCoordinate.m */; };
+		890B86CE17AC360000069298 /* AttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7143172739D60074CC21 /* AttributesViewController.m */; };
+		890B86CF17AC360000069298 /* BogusSelectGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7147172739D60074CC21 /* BogusSelectGameViewController.m */; };
+		890B86D017AC360000069298 /* DecoderViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = AABC714B172739D60074CC21 /* DecoderViewController.mm */; };
+		890B86D117AC360000069298 /* InventoryTradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7152172739D60074CC21 /* InventoryTradeViewController.m */; };
+		890B86D217AC360000069298 /* RoundedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7159172739D60074CC21 /* RoundedTableViewCell.m */; };
+		890B86D317AC360000069298 /* AnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC715E172739D60074CC21 /* AnnotationView.m */; };
+		890B86D417AC360000069298 /* TileOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7165172739D60074CC21 /* TileOverlay.m */; };
+		890B86D517AC360000069298 /* TileOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7167172739D60074CC21 /* TileOverlayView.m */; };
+		890B86D617AC360000069298 /* NearbyObjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC716A172739D60074CC21 /* NearbyObjectCell.m */; };
+		890B86D717AC360000069298 /* NearbyObjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC716E172739D60074CC21 /* NearbyObjectsViewController.m */; };
+		890B86D817AC360000069298 /* AudioMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7172172739D60074CC21 /* AudioMeter.m */; };
+		890B86D917AC360000069298 /* AudioPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7174172739D60074CC21 /* AudioPlayerViewController.m */; };
+		890B86DA17AC360000069298 /* AudioRecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7177172739D60074CC21 /* AudioRecorderViewController.m */; };
+		890B86DB17AC360000069298 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC717B172739D60074CC21 /* CameraViewController.m */; };
+		890B86DC17AC360000069298 /* DDAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC717D172739D60074CC21 /* DDAnnotation.m */; };
+		890B86DD17AC360000069298 /* DDAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC717F172739D60074CC21 /* DDAnnotationView.m */; };
+		890B86DE17AC360000069298 /* DropOnMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7181172739D60074CC21 /* DropOnMapViewController.m */; };
+		890B86DF17AC360000069298 /* ImageViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7184172739D60074CC21 /* ImageViewer.m */; };
+		890B86E017AC360000069298 /* NotebookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7187172739D60074CC21 /* NotebookViewController.m */; };
+		890B86E117AC360000069298 /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC718A172739D60074CC21 /* NoteCell.m */; };
+		890B86E217AC360000069298 /* NoteCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC718D172739D60074CC21 /* NoteCommentCell.m */; };
+		890B86E317AC360000069298 /* NoteCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7190172739D70074CC21 /* NoteCommentViewController.m */; };
+		890B86E417AC360000069298 /* NoteContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7193172739D70074CC21 /* NoteContentCell.m */; };
+		890B86E517AC360000069298 /* NoteDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7197172739D70074CC21 /* NoteDetailsViewController.m */; };
+		890B86E617AC360000069298 /* NoteEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC719A172739D70074CC21 /* NoteEditorViewController.m */; };
+		890B86E717AC360000069298 /* TagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC719D172739D70074CC21 /* TagCell.m */; };
+		890B86E817AC360000069298 /* TagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC71A0172739D70074CC21 /* TagViewController.m */; };
+		890B86E917AC360000069298 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC71A3172739D70074CC21 /* TextViewController.m */; };
+		890B86EA17AC360000069298 /* IconQuestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC71A9172739D70074CC21 /* IconQuestsViewController.m */; };
+		890B86EB17AC360000069298 /* QuestDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC71AC172739D70074CC21 /* QuestDetailsViewController.m */; };
+		890B86EC17AC360000069298 /* QuestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC71B0172739D70074CC21 /* QuestsViewController.m */; };
+		890B86ED17AC360000069298 /* BumpTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC71B8172739D70074CC21 /* BumpTestViewController.m */; };
+		890B86EE17AC360000069298 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC71C3172739D70074CC21 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		890B86EF17AC360000069298 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC71C5172739D70074CC21 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		890B86F017AC360000069298 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC71C7172739D70074CC21 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		890B86F117AC360000069298 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC71C9172739D70074CC21 /* SBJSON.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		890B86F217AC360000069298 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC71CB172739D70074CC21 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		890B86F317AC360000069298 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC71CD172739D70074CC21 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		890B86F417AC360000069298 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC71CF172739D70074CC21 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		890B86F517AC360000069298 /* glues_error.c in Sources */ = {isa = PBXBuildFile; fileRef = AABC71D4172739D70074CC21 /* glues_error.c */; };
+		890B86F617AC360000069298 /* glues_mipmap.c in Sources */ = {isa = PBXBuildFile; fileRef = AABC71D6172739D70074CC21 /* glues_mipmap.c */; };
+		890B86F717AC360000069298 /* glues_project.c in Sources */ = {isa = PBXBuildFile; fileRef = AABC71D8172739D70074CC21 /* glues_project.c */; };
+		890B86F817AC360000069298 /* glues_quad.c in Sources */ = {isa = PBXBuildFile; fileRef = AABC71DA172739D70074CC21 /* glues_quad.c */; };
+		890B86F917AC360000069298 /* glues_registry.c in Sources */ = {isa = PBXBuildFile; fileRef = AABC71DC172739D70074CC21 /* glues_registry.c */; };
+		890B86FA17AC360000069298 /* dict.c in Sources */ = {isa = PBXBuildFile; fileRef = AABC71E1172739D70074CC21 /* dict.c */; };
+		890B86FB17AC360000069298 /* geom.c in Sources */ = {isa = PBXBuildFile; fileRef = AABC71E3172739D70074CC21 /* geom.c */; };
+		890B86FC17AC360000069298 /* memalloc.c in Sources */ = {isa = PBXBuildFile; fileRef = AABC71E5172739D70074CC21 /* memalloc.c */; };
+		890B86FD17AC360000069298 /* mesh.c in Sources */ = {isa = PBXBuildFile; fileRef = AABC71E7172739D70074CC21 /* mesh.c */; };
+		890B86FE17AC360000069298 /* normal.c in Sources */ = {isa = PBXBuildFile; fileRef = AABC71E9172739D70074CC21 /* normal.c */; };
+		890B86FF17AC360000069298 /* priorityq-heap.c in Sources */ = {isa = PBXBuildFile; fileRef = AABC71EB172739D70074CC21 /* priorityq-heap.c */; };
+		890B870017AC360000069298 /* priorityq.c in Sources */ = {isa = PBXBuildFile; fileRef = AABC71ED172739D70074CC21 /* priorityq.c */; };
+		890B870117AC360000069298 /* render.c in Sources */ = {isa = PBXBuildFile; fileRef = AABC71F0172739D70074CC21 /* render.c */; };
+		890B870217AC360000069298 /* sweep.c in Sources */ = {isa = PBXBuildFile; fileRef = AABC71F2172739D70074CC21 /* sweep.c */; };
+		890B870317AC360000069298 /* tess.c in Sources */ = {isa = PBXBuildFile; fileRef = AABC71F4172739D70074CC21 /* tess.c */; };
+		890B870417AC360000069298 /* tessmono.c in Sources */ = {isa = PBXBuildFile; fileRef = AABC71F6172739D70074CC21 /* tessmono.c */; };
+		890B870517AC360000069298 /* PLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC71FA172739D70074CC21 /* PLCamera.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		890B870617AC360000069298 /* PLControl.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC71FD172739D70074CC21 /* PLControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		890B870717AC360000069298 /* PLControlZoomIn.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7200172739D70074CC21 /* PLControlZoomIn.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		890B870817AC360000069298 /* PLControlZoomOut.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7202172739D70074CC21 /* PLControlZoomOut.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		890B870917AC360000069298 /* PLCube.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7204172739D70074CC21 /* PLCube.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		890B870A17AC360000069298 /* PLCylinder.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7206172739D70074CC21 /* PLCylinder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		890B870B17AC360000069298 /* PLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7209172739D70074CC21 /* PLImage.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		890B870C17AC360000069298 /* PLMath.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC720B172739D70074CC21 /* PLMath.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		890B870D17AC360000069298 /* PLObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC720D172739D70074CC21 /* PLObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		890B870E17AC360000069298 /* PLRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC720F172739D70074CC21 /* PLRenderer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		890B870F17AC360000069298 /* PLResources.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7211172739D70074CC21 /* PLResources.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		890B871017AC360000069298 /* PLScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7213172739D70074CC21 /* PLScene.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		890B871117AC360000069298 /* PLSceneElement.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7215172739D70074CC21 /* PLSceneElement.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		890B871217AC360000069298 /* PLSceneElementBase.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7217172739D70074CC21 /* PLSceneElementBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		890B871317AC360000069298 /* PLSphere.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7219172739D70074CC21 /* PLSphere.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		890B871417AC360000069298 /* PLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC721C172739D70074CC21 /* PLTexture.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		890B871517AC360000069298 /* PLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC721E172739D70074CC21 /* PLUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		890B871617AC360000069298 /* PLView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7220172739D70074CC21 /* PLView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		890B871717AC360000069298 /* PLViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7222172739D70074CC21 /* PLViewBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		890B871817AC360000069298 /* NSDictionary+ValidParsers.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7364172739D80074CC21 /* NSDictionary+ValidParsers.m */; };
+		890B871917AC360000069298 /* NSMutableDictionary+ImageMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7366172739D80074CC21 /* NSMutableDictionary+ImageMetadata.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		890B871A17AC360000069298 /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7369172739D80074CC21 /* UIDevice+Hardware.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		890B871B17AC360000069298 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC736B172739D80074CC21 /* UIImage+Alpha.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		890B871C17AC360000069298 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC736D172739D80074CC21 /* UIImage+fixOrientation.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		890B871D17AC360000069298 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC736F172739D80074CC21 /* UIImage+Resize.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		890B871E17AC360000069298 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7371172739D80074CC21 /* UIImage+RoundedCorner.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		890B871F17AC360000069298 /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7373172739D80074CC21 /* UIImage+Scale.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		890B872017AC360000069298 /* InventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC74F717285FE00074CC21 /* InventoryViewController.m */; };
+		890B872117AC360000069298 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC74FE1728600B0074CC21 /* MapViewController.m */; };
+		890B872217AC360000069298 /* WebPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC75031728604E0074CC21 /* WebPageViewController.m */; };
+		890B872317AC360000069298 /* NpcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7508172860690074CC21 /* NpcViewController.m */; };
+		890B872417AC360000069298 /* ItemActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC750F172860860074CC21 /* ItemActionViewController.m */; };
+		890B872517AC360000069298 /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC7517172873510074CC21 /* ItemViewController.m */; };
+		890B872617AC360000069298 /* GameObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAC4353172EDDB300C92DF0 /* GameObjectViewController.m */; };
+		890B872717AC360000069298 /* GamePlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA701FDB17330947003A840D /* GamePlayViewController.m */; };
+		890B872817AC360000069298 /* GamePickersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA701FE017342169003A840D /* GamePickersViewController.m */; };
+		890B872917AC360000069298 /* ARISAlertHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AA701FE4173428C3003A840D /* ARISAlertHandler.m */; };
+		890B872A17AC360000069298 /* ARISPusherHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AA701FE7173443FB003A840D /* ARISPusherHandler.m */; };
+		890B872B17AC360000069298 /* ARISContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA50A47F17396B7000B105C2 /* ARISContainerViewController.m */; };
+		890B872C17AC360000069298 /* ARISGamePlayTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAB7636173AB6E7007B5A75 /* ARISGamePlayTabBarViewController.m */; };
+		890B872D17AC360000069298 /* ARISNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4B20921745672500079AEF /* ARISNavigationController.m */; };
+		890B872E17AC360000069298 /* JSONConnection+Local.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7A317626EE9005C279B /* JSONConnection+Local.m */; };
+		890B872F17AC360000069298 /* LocalData.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7A517626EE9005C279B /* LocalData.m */; };
+		890B873017AC360000069298 /* LocalMap.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7A717626EE9005C279B /* LocalMap.m */; };
+		890B873117AC360000069298 /* LocalMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7A917626EE9005C279B /* LocalMapView.m */; };
+		890B873217AC360000069298 /* aris.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7AB17626EE9005C279B /* aris.xcdatamodeld */; };
+		890B873317AC360000069298 /* MComment.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7AF17626EE9005C279B /* MComment.m */; };
+		890B873417AC360000069298 /* MGame.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7B117626EE9005C279B /* MGame.m */; };
+		890B873517AC360000069298 /* MItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7B317626EE9005C279B /* MItem.m */; };
+		890B873617AC360000069298 /* MLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7B517626EE9005C279B /* MLocation.m */; };
+		890B873717AC360000069298 /* MMap.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7B717626EE9005C279B /* MMap.m */; };
+		890B873817AC360000069298 /* MMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7B917626EE9005C279B /* MMedia.m */; };
+		890B873917AC360000069298 /* MNode.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7BB17626EE9005C279B /* MNode.m */; };
+		890B873A17AC360000069298 /* MNpc.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7BD17626EE9005C279B /* MNpc.m */; };
+		890B873B17AC360000069298 /* MNpcConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7BF17626EE9005C279B /* MNpcConversation.m */; };
+		890B873C17AC360000069298 /* MOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7C117626EE9005C279B /* MOverlay.m */; };
+		890B873D17AC360000069298 /* MOverlayTile.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7C317626EE9005C279B /* MOverlayTile.m */; };
+		890B873E17AC360000069298 /* MPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7C517626EE9005C279B /* MPlayer.m */; };
+		890B873F17AC360000069298 /* MPlayerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7C717626EE9005C279B /* MPlayerItem.m */; };
+		890B874017AC360000069298 /* MPlayerLog.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7C917626EE9005C279B /* MPlayerLog.m */; };
+		890B874117AC360000069298 /* MPlayerStateChange.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7CB17626EE9005C279B /* MPlayerStateChange.m */; };
+		890B874217AC360000069298 /* MQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7CD17626EE9005C279B /* MQRCode.m */; };
+		890B874317AC360000069298 /* MQuest.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7CF17626EE9005C279B /* MQuest.m */; };
+		890B874417AC360000069298 /* MRequirement.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7D117626EE9005C279B /* MRequirement.m */; };
+		890B874517AC360000069298 /* MTab.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7D317626EE9005C279B /* MTab.m */; };
+		890B874617AC360000069298 /* NSData+md5.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7D517626EE9005C279B /* NSData+md5.m */; };
+		890B874717AC360000069298 /* NSURLConnection+block.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7D717626EE9005C279B /* NSURLConnection+block.m */; };
+		890B874817AC360000069298 /* StoreLocallyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA74E7D917626EE9005C279B /* StoreLocallyViewController.m */; };
+		890B874917AC360000069298 /* MTStatusBarOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3D7C6F17662C1F00382D00 /* MTStatusBarOverlay.m */; };
+		890B874A17AC360000069298 /* UIColor+ARISColors.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0DE7361778636300D62D9B /* UIColor+ARISColors.m */; };
+		890B874B17AC360000069298 /* AudioSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBA6A4817822E4C00387DBD /* AudioSlider.m */; };
+		890B874C17AC360000069298 /* AudioTint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBA6A4A17822E4C00387DBD /* AudioTint.m */; };
+		890B874D17AC360000069298 /* AudioVisualizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBA6A4C17822E4C00387DBD /* AudioVisualizerViewController.m */; };
+		890B874E17AC360000069298 /* FreqHistogramControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBA6A4F17822E4C00387DBD /* FreqHistogramControl.m */; };
+		890B874F17AC360000069298 /* WaveformControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBA6A5117822E4C00387DBD /* WaveformControl.m */; };
+		890B875017AC360000069298 /* WaveSampleProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBA6A5317822E4C00387DBD /* WaveSampleProvider.m */; };
+		890B875117AC360000069298 /* Playhead.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B87AE23178DBA4100229D92 /* Playhead.m */; };
+		890B875217AC360000069298 /* GamePickerSearching.js in Sources */ = {isa = PBXBuildFile; fileRef = AB123BDD1794314700547BA7 /* GamePickerSearching.js */; };
+		890B875317AC360000069298 /* ARISWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3F493117A828B300FF4C80 /* ARISWebView.m */; };
+		890B875517AC360000069298 /* arisjs.js in Resources */ = {isa = PBXBuildFile; fileRef = AA856FEF17A972B800E9D451 /* arisjs.js */; };
+		890B875617AC360000069298 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB0A5BA3120365420065CE68 /* Localizable.strings */; };
+		890B875717AC360000069298 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F3A172738CD0074CC21 /* Settings.bundle */; };
+		890B875817AC360000069298 /* 103-map.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F3E1727398B0074CC21 /* 103-map.png */; };
+		890B875917AC360000069298 /* 103-map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F3F1727398B0074CC21 /* 103-map@2x.png */; };
+		890B875A17AC360000069298 /* 117-todo.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F401727398B0074CC21 /* 117-todo.png */; };
+		890B875B17AC360000069298 /* 117-todo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F411727398B0074CC21 /* 117-todo@2x.png */; };
+		890B875C17AC360000069298 /* 123-id-card.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F421727398B0074CC21 /* 123-id-card.png */; };
+		890B875D17AC360000069298 /* 123-id-card@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F431727398B0074CC21 /* 123-id-card@2x.png */; };
+		890B875E17AC360000069298 /* 14-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F441727398B0074CC21 /* 14-gear.png */; };
+		890B875F17AC360000069298 /* 14-gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F451727398B0074CC21 /* 14-gear@2x.png */; };
+		890B876017AC360000069298 /* 16-tag.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F461727398B0074CC21 /* 16-tag.png */; };
+		890B876117AC360000069298 /* 16-tag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F471727398B0074CC21 /* 16-tag@2x.png */; };
+		890B876217AC360000069298 /* 193-location-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F481727398B0074CC21 /* 193-location-arrow.png */; };
+		890B876317AC360000069298 /* 193-location-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F491727398B0074CC21 /* 193-location-arrow@2x.png */; };
+		890B876417AC360000069298 /* 213-reply.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F4A1727398B0074CC21 /* 213-reply.png */; };
+		890B876517AC360000069298 /* 213-reply@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F4B1727398B0074CC21 /* 213-reply@2x.png */; };
+		890B876617AC360000069298 /* 298-circlex.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F4C1727398B0074CC21 /* 298-circlex.png */; };
+		890B876717AC360000069298 /* 298-circlex@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F4D1727398B0074CC21 /* 298-circlex@2x.png */; };
+		890B876817AC360000069298 /* 36-toolbox.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F4E1727398B0074CC21 /* 36-toolbox.png */; };
+		890B876917AC360000069298 /* 36-toolbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F4F1727398B0074CC21 /* 36-toolbox@2x.png */; };
+		890B876A17AC360000069298 /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F501727398B0074CC21 /* 73-radar.png */; };
+		890B876B17AC360000069298 /* 73-radar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F511727398B0074CC21 /* 73-radar@2x.png */; };
+		890B876C17AC360000069298 /* 74-location.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F521727398B0074CC21 /* 74-location.png */; };
+		890B876D17AC360000069298 /* 74-location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F531727398B0074CC21 /* 74-location@2x.png */; };
+		890B876E17AC360000069298 /* 78-stopwatch.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F541727398B0074CC21 /* 78-stopwatch.png */; };
+		890B876F17AC360000069298 /* 78-stopwatch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F551727398B0074CC21 /* 78-stopwatch@2x.png */; };
+		890B877017AC360000069298 /* 85-trophy.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F561727398B0074CC21 /* 85-trophy.png */; };
+		890B877117AC360000069298 /* 85-trophy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F571727398B0074CC21 /* 85-trophy@2x.png */; };
+		890B877217AC360000069298 /* 96-book.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F581727398B0074CC21 /* 96-book.png */; };
+		890B877317AC360000069298 /* 96-book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F591727398B0074CC21 /* 96-book@2x.png */; };
+		890B877417AC360000069298 /* blue_button.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F5A1727398B0074CC21 /* blue_button.png */; };
+		890B877517AC360000069298 /* blue_button.psd in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F5B1727398B0074CC21 /* blue_button.psd */; };
+		890B877617AC360000069298 /* bump_logo_250x84.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F5C1727398B0074CC21 /* bump_logo_250x84.png */; };
+		890B877717AC360000069298 /* Button-Play-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F5D1727398B0074CC21 /* Button-Play-icon.png */; };
+		890B877817AC360000069298 /* buttonborder.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F5E1727398B0074CC21 /* buttonborder.png */; };
+		890B877917AC360000069298 /* buttonborder2.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F5F1727398B0074CC21 /* buttonborder2.png */; };
+		890B877A17AC360000069298 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F601727398B0074CC21 /* camera.png */; };
+		890B877B17AC360000069298 /* camera_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F611727398B0074CC21 /* camera_icon.png */; };
+		890B877C17AC360000069298 /* camera_roll.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F621727398B0074CC21 /* camera_roll.png */; };
+		890B877D17AC360000069298 /* cameraBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F631727398B0074CC21 /* cameraBackground.jpg */; };
+		890B877E17AC360000069298 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F641727398B0074CC21 /* check.png */; };
+		890B877F17AC360000069298 /* clickToPlay.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F651727398B0074CC21 /* clickToPlay.png */; };
+		890B878017AC360000069298 /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F661727398B0074CC21 /* comment.png */; };
+		890B878117AC360000069298 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F671727398B0074CC21 /* Default.png */; };
+		890B878217AC360000069298 /* defaultAudioIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F681727398B0074CC21 /* defaultAudioIcon.png */; };
+		890B878317AC360000069298 /* defaultCharacter.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F691727398B0074CC21 /* defaultCharacter.png */; };
+		890B878417AC360000069298 /* DefaultGameSplash.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F6A1727398B0074CC21 /* DefaultGameSplash.png */; };
+		890B878517AC360000069298 /* defaultImageIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F6B1727398B0074CC21 /* defaultImageIcon.png */; };
+		890B878617AC360000069298 /* DefaultPCImage.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F6C1727398B0074CC21 /* DefaultPCImage.png */; };
+		890B878717AC360000069298 /* defaultVideoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F6D1727398B0074CC21 /* defaultVideoIcon.png */; };
+		890B878817AC360000069298 /* developer.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F6E1727398B0074CC21 /* developer.png */; };
+		890B878917AC360000069298 /* game.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F6F1727398B0074CC21 /* game.png */; };
+		890B878A17AC360000069298 /* garden_frame1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F701727398B0074CC21 /* garden_frame1.jpg */; };
+		890B878B17AC360000069298 /* garden_frame2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F711727398B0074CC21 /* garden_frame2.jpg */; };
+		890B878C17AC360000069298 /* garden_frame3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F721727398B0074CC21 /* garden_frame3.jpg */; };
+		890B878D17AC360000069298 /* grey_button.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F731727398B0074CC21 /* grey_button.png */; };
+		890B878E17AC360000069298 /* grey_button.psd in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F741727398B0074CC21 /* grey_button.psd */; };
+		890B878F17AC360000069298 /* img.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F771727398B0074CC21 /* img.png */; };
+		890B879017AC360000069298 /* inventory.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F781727398B0074CC21 /* inventory.png */; };
+		890B879117AC360000069298 /* item.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F791727398B0074CC21 /* item.png */; };
+		890B879217AC360000069298 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F7A1727398B0074CC21 /* loading.png */; };
+		890B879317AC360000069298 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F7B1727398B0074CC21 /* location.png */; };
+		890B879417AC360000069298 /* LogoutButton.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F7D1727398B0074CC21 /* LogoutButton.png */; };
+		890B879517AC360000069298 /* mappoint.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F7E1727398B0074CC21 /* mappoint.png */; };
+		890B879617AC360000069298 /* mappoint_red.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F7F1727398B0074CC21 /* mappoint_red.png */; };
+		890B879717AC360000069298 /* marker-blue-withletter.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F801727398B0074CC21 /* marker-blue-withletter.png */; };
+		890B879817AC360000069298 /* marker-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F811727398B0074CC21 /* marker-blue.png */; };
+		890B879917AC360000069298 /* marker-other-player.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F821727398B0074CC21 /* marker-other-player.png */; };
+		890B879A17AC360000069298 /* marker-player-lqgps.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F831727398B0074CC21 /* marker-player-lqgps.png */; };
+		890B879B17AC360000069298 /* marker-player.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F841727398B0074CC21 /* marker-player.png */; };
+		890B879C17AC360000069298 /* marker-red-withletter.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F851727398B0074CC21 /* marker-red-withletter.png */; };
+		890B879D17AC360000069298 /* marker-red.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F861727398B0074CC21 /* marker-red.png */; };
+		890B879E17AC360000069298 /* microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F871727398B0074CC21 /* microphone.png */; };
+		890B879F17AC360000069298 /* microphoneBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F881727398B0074CC21 /* microphoneBackground.jpg */; };
+		890B87A017AC360000069298 /* microphoneForeground.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F891727398B0074CC21 /* microphoneForeground.png */; };
+		890B87A117AC360000069298 /* newBanner.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F8A1727398B0074CC21 /* newBanner.png */; };
+		890B87A217AC360000069298 /* notebook.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F8B1727398B0074CC21 /* notebook.png */; };
+		890B87A317AC360000069298 /* notebook2.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F8C1727398B0074CC21 /* notebook2.png */; };
+		890B87A417AC360000069298 /* noteicon.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F8D1727398B0074CC21 /* noteicon.png */; };
+		890B87A517AC360000069298 /* npc.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F8E1727398B0074CC21 /* npc.png */; };
+		890B87A617AC360000069298 /* painting.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F8F1727398B0074CC21 /* painting.png */; };
+		890B87A717AC360000069298 /* Pin.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F901727398B0074CC21 /* Pin.png */; };
+		890B87A817AC360000069298 /* PinDown1.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F911727398B0074CC21 /* PinDown1.png */; };
+		890B87A917AC360000069298 /* PinDown2.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F921727398B0074CC21 /* PinDown2.png */; };
+		890B87AA17AC360000069298 /* PinDown3.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F931727398B0074CC21 /* PinDown3.png */; };
+		890B87AB17AC360000069298 /* PinFloating.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F941727398B0074CC21 /* PinFloating.png */; };
+		890B87AC17AC360000069298 /* PinShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F951727398B0074CC21 /* PinShadow.png */; };
+		890B87AD17AC360000069298 /* plaque.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F961727398B0074CC21 /* plaque.png */; };
+		890B87AE17AC360000069298 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F971727398B0074CC21 /* play.png */; };
+		890B87AF17AC360000069298 /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F981727398B0074CC21 /* play_button.png */; };
+		890B87B017AC360000069298 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F991727398B0074CC21 /* player.png */; };
+		890B87B117AC360000069298 /* playericon.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F9A1727398B0074CC21 /* playericon.png */; };
+		890B87B217AC360000069298 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F9B1727398B0074CC21 /* profile.png */; };
+		890B87B317AC360000069298 /* profpic.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F9C1727398B0074CC21 /* profpic.png */; };
+		890B87B417AC360000069298 /* public.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F9D1727398B0074CC21 /* public.png */; };
+		890B87B517AC360000069298 /* qrBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F9E1727398B0074CC21 /* qrBackground.png */; };
+		890B87B617AC360000069298 /* qrcode_big.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6F9F1727398B0074CC21 /* qrcode_big.png */; };
+		890B87B717AC360000069298 /* qrscanner.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FA01727398B0074CC21 /* qrscanner.png */; };
+		890B87B817AC360000069298 /* QRScannersharp.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FA11727398B0074CC21 /* QRScannersharp.png */; };
+		890B87B917AC360000069298 /* Quest.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FA21727398B0074CC21 /* Quest.png */; };
+		890B87BA17AC360000069298 /* QuestBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FA31727398B0074CC21 /* QuestBorder.png */; };
+		890B87BB17AC360000069298 /* RoundedBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FA41727398B0074CC21 /* RoundedBackground.png */; };
+		890B87BC17AC360000069298 /* small-star-halfselected.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FA51727398B0074CC21 /* small-star-halfselected.png */; };
+		890B87BD17AC360000069298 /* small-star-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FA61727398B0074CC21 /* small-star-highlighted.png */; };
+		890B87BE17AC360000069298 /* small-star-hot.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FA71727398B0074CC21 /* small-star-hot.png */; };
+		890B87BF17AC360000069298 /* small-star-nonselected.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FA81727398B0074CC21 /* small-star-nonselected.png */; };
+		890B87C017AC360000069298 /* small-star-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FA91727398B0074CC21 /* small-star-selected.png */; };
+		890B87C117AC360000069298 /* star-halfselected.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FAA1727398B0074CC21 /* star-halfselected.png */; };
+		890B87C217AC360000069298 /* star-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FAB1727398B0074CC21 /* star-highlighted.png */; };
+		890B87C317AC360000069298 /* star-hot.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FAC1727398B0074CC21 /* star-hot.png */; };
+		890B87C417AC360000069298 /* star-nonselected.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FAD1727398B0074CC21 /* star-nonselected.png */; };
+		890B87C517AC360000069298 /* star-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FAE1727398B0074CC21 /* star-selected.png */; };
+		890B87C617AC360000069298 /* star-userselected.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FAF1727398B0074CC21 /* star-userselected.png */; };
+		890B87C717AC360000069298 /* stop_button.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FB01727398B0074CC21 /* stop_button.png */; };
+		890B87C817AC360000069298 /* textFade.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FB11727398B0074CC21 /* textFade.png */; };
+		890B87C917AC360000069298 /* textToggle.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FB21727398B0074CC21 /* textToggle.png */; };
+		890B87CA17AC360000069298 /* thumbs_up.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FB31727398B0074CC21 /* thumbs_up.png */; };
+		890B87CB17AC360000069298 /* thumbs_up_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FB41727398B0074CC21 /* thumbs_up_selected.png */; };
+		890B87CC17AC360000069298 /* thumbs_up_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FB51727398B0074CC21 /* thumbs_up_unselected.png */; };
+		890B87CD17AC360000069298 /* upc.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FB61727398B0074CC21 /* upc.png */; };
+		890B87CE17AC360000069298 /* warning-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FB71727398B0074CC21 /* warning-icon.png */; };
+		890B87CF17AC360000069298 /* warning.png in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FB81727398B0074CC21 /* warning.png */; };
+		890B87D017AC360000069298 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FBA1727398B0074CC21 /* click.wav */; };
+		890B87D117AC360000069298 /* drop.wav in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FBB1727398B0074CC21 /* drop.wav */; };
+		890B87D217AC360000069298 /* error.wav in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FBC1727398B0074CC21 /* error.wav */; };
+		890B87D317AC360000069298 /* harp.wav in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FBD1727398B0074CC21 /* harp.wav */; };
+		890B87D417AC360000069298 /* inventoryChange.wav in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FBE1727398B0074CC21 /* inventoryChange.wav */; };
+		890B87D517AC360000069298 /* mapChange.wav in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FBF1727398B0074CC21 /* mapChange.wav */; };
+		890B87D617AC360000069298 /* nearbyObject.wav in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FC01727398B0074CC21 /* nearbyObject.wav */; };
+		890B87D717AC360000069298 /* pingtone.wav in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FC11727398B0074CC21 /* pingtone.wav */; };
+		890B87D817AC360000069298 /* questChange.wav in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FC21727398B0074CC21 /* questChange.wav */; };
+		890B87D917AC360000069298 /* swish.wav in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FC31727398B0074CC21 /* swish.wav */; };
+		890B87DA17AC360000069298 /* ticktick.wav in Resources */ = {isa = PBXBuildFile; fileRef = AABC6FC41727398B0074CC21 /* ticktick.wav */; };
+		890B87DB17AC360000069298 /* Bascom Hall.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AABC704C1727399C0074CC21 /* Bascom Hall.gpx */; };
+		890B87DC17AC360000069298 /* Bascom Hill.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AABC704D1727399C0074CC21 /* Bascom Hill.gpx */; };
+		890B87DD17AC360000069298 /* Central Park New York.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AABC704E1727399C0074CC21 /* Central Park New York.gpx */; };
+		890B87DE17AC360000069298 /* Chemistry.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AABC704F1727399C0074CC21 /* Chemistry.gpx */; };
+		890B87DF17AC360000069298 /* Engage Offices.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AABC70501727399C0074CC21 /* Engage Offices.gpx */; };
+		890B87E017AC360000069298 /* Engineering Fountain.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AABC70511727399C0074CC21 /* Engineering Fountain.gpx */; };
+		890B87E117AC360000069298 /* Grainger.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AABC70521727399C0074CC21 /* Grainger.gpx */; };
+		890B87E217AC360000069298 /* Institutes for Discovery.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AABC70531727399C0074CC21 /* Institutes for Discovery.gpx */; };
+		890B87E317AC360000069298 /* North Hall.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AABC70541727399C0074CC21 /* North Hall.gpx */; };
+		890B87E417AC360000069298 /* Science Hall.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AABC70551727399C0074CC21 /* Science Hall.gpx */; };
+		890B87E517AC360000069298 /* Van Hise.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AABC70561727399C0074CC21 /* Van Hise.gpx */; };
+		890B881117AC360000069298 /* alg-outline in Resources */ = {isa = PBXBuildFile; fileRef = AABC71DF172739D70074CC21 /* alg-outline */; };
+		890B881217AC360000069298 /* README in Resources */ = {isa = PBXBuildFile; fileRef = AABC71EF172739D70074CC21 /* README */; };
+		890B881C17AC360000069298 /* 123-id-card-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA50A482173992F500B105C2 /* 123-id-card-white@2x.png */; };
+		890B881D17AC360000069298 /* 123-id-card-white.png in Resources */ = {isa = PBXBuildFile; fileRef = AA50A483173992F500B105C2 /* 123-id-card-white.png */; };
+		890B881E17AC360000069298 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA1DA9831742BB2700D10A35 /* Default-568h@2x.png */; };
+		890B882017AC360000069298 /* ac_location.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AA74E7A117626EE9005C279B /* ac_location.gpx */; };
+		890B882217AC360000069298 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB2CABF177267280060FFFA /* icon.png */; };
+		890B882317AC360000069298 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB2CAC0177267280060FFFA /* icon@2x.png */; };
+		890B882417AC360000069298 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB2CAC3177267490060FFFA /* Default-568h@2x.png */; };
+		890B882517AC360000069298 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB2CAC7177267630060FFFA /* Default@2x.png */; };
+		890B882617AC360000069298 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AB39FD401773ACCF006DEC96 /* logo.png */; };
+		890B882717AC360000069298 /* logoWithText.png in Resources */ = {isa = PBXBuildFile; fileRef = AB44383F1774DFF2004D9DC3 /* logoWithText.png */; };
+		890B882817AC360000069298 /* navBarBackground44.png in Resources */ = {isa = PBXBuildFile; fileRef = AB0DE73117785B1E00D62D9B /* navBarBackground44.png */; };
+		890B882917AC360000069298 /* tabBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F595177B785F001B0CAE /* tabBarBackground.png */; };
+		890B882A17AC360000069298 /* tabBarSelect.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F596177B785F001B0CAE /* tabBarSelect.png */; };
+		890B882B17AC360000069298 /* bookTabBarSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F59E177B7AD3001B0CAE /* bookTabBarSelected.png */; };
+		890B882C17AC360000069298 /* bookTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F59F177B7AD3001B0CAE /* bookTabBarSelected@2x.png */; };
+		890B882D17AC360000069298 /* cameraTabBarSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5A0177B7AD3001B0CAE /* cameraTabBarSelected.png */; };
+		890B882E17AC360000069298 /* idCardTabBarSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5A1177B7AD3001B0CAE /* idCardTabBarSelected.png */; };
+		890B882F17AC360000069298 /* idCardTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5A2177B7AD3001B0CAE /* idCardTabBarSelected@2x.png */; };
+		890B883017AC360000069298 /* locationArrowTabBarSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5A3177B7AD3001B0CAE /* locationArrowTabBarSelected.png */; };
+		890B883117AC360000069298 /* locationArrowTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5A4177B7AD3001B0CAE /* locationArrowTabBarSelected@2x.png */; };
+		890B883217AC360000069298 /* mapTabBarSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5A5177B7AD3001B0CAE /* mapTabBarSelected.png */; };
+		890B883317AC360000069298 /* mapTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5A6177B7AD3001B0CAE /* mapTabBarSelected@2x.png */; };
+		890B883417AC360000069298 /* microphoneTabBarSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5A7177B7AD3001B0CAE /* microphoneTabBarSelected.png */; };
+		890B883517AC360000069298 /* radarTabBarSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5A9177B7AD3001B0CAE /* radarTabBarSelected.png */; };
+		890B883617AC360000069298 /* radarTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5AA177B7AD3001B0CAE /* radarTabBarSelected@2x.png */; };
+		890B883717AC360000069298 /* replyTabBarSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5AB177B7AD3001B0CAE /* replyTabBarSelected.png */; };
+		890B883817AC360000069298 /* replyTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5AC177B7AD3001B0CAE /* replyTabBarSelected@2x.png */; };
+		890B883917AC360000069298 /* stopwatchTabBarSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5AD177B7AD3001B0CAE /* stopwatchTabBarSelected.png */; };
+		890B883A17AC360000069298 /* stopwatchTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5AE177B7AD3001B0CAE /* stopwatchTabBarSelected@2x.png */; };
+		890B883B17AC360000069298 /* todoTabBarSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5AF177B7AD3001B0CAE /* todoTabBarSelected.png */; };
+		890B883C17AC360000069298 /* todoTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5B0177B7AD3001B0CAE /* todoTabBarSelected@2x.png */; };
+		890B883D17AC360000069298 /* toolboxTabBarSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5B1177B7AD3001B0CAE /* toolboxTabBarSelected.png */; };
+		890B883E17AC360000069298 /* toolboxTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5B2177B7AD3001B0CAE /* toolboxTabBarSelected@2x.png */; };
+		890B883F17AC360000069298 /* trophyTabBarSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5B3177B7AD3001B0CAE /* trophyTabBarSelected.png */; };
+		890B884017AC360000069298 /* trophyTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5B4177B7AD3001B0CAE /* trophyTabBarSelected@2x.png */; };
+		890B884117AC360000069298 /* bookTabBarUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5B6177B7AD3001B0CAE /* bookTabBarUnselected.png */; };
+		890B884217AC360000069298 /* bookTabBarUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5B7177B7AD3001B0CAE /* bookTabBarUnselected@2x.png */; };
+		890B884317AC360000069298 /* cameraTabBarUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5B8177B7AD3001B0CAE /* cameraTabBarUnselected.png */; };
+		890B884417AC360000069298 /* idCardTabBarUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5B9177B7AD3001B0CAE /* idCardTabBarUnselected.png */; };
+		890B884517AC360000069298 /* idCardTabBarUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5BA177B7AD3001B0CAE /* idCardTabBarUnselected@2x.png */; };
+		890B884617AC360000069298 /* locationArrowTabBarUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5BC177B7AD3001B0CAE /* locationArrowTabBarUnselected.png */; };
+		890B884717AC360000069298 /* mapTabBarUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5BD177B7AD3001B0CAE /* mapTabBarUnselected.png */; };
+		890B884817AC360000069298 /* mapTabBarUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5BE177B7AD3001B0CAE /* mapTabBarUnselected@2x.png */; };
+		890B884917AC360000069298 /* microphoneTabBarUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5BF177B7AD3001B0CAE /* microphoneTabBarUnselected.png */; };
+		890B884A17AC360000069298 /* radarTabBarUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5C1177B7AD3001B0CAE /* radarTabBarUnselected.png */; };
+		890B884B17AC360000069298 /* radarTabBarUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5C2177B7AD3001B0CAE /* radarTabBarUnselected@2x.png */; };
+		890B884C17AC360000069298 /* replyTabBarUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5C3177B7AD3001B0CAE /* replyTabBarUnselected.png */; };
+		890B884D17AC360000069298 /* replyTabBarUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5C4177B7AD3001B0CAE /* replyTabBarUnselected@2x.png */; };
+		890B884E17AC360000069298 /* stopwatchTabBarUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5C5177B7AD3001B0CAE /* stopwatchTabBarUnselected.png */; };
+		890B884F17AC360000069298 /* stopwatchTabBarUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5C6177B7AD3001B0CAE /* stopwatchTabBarUnselected@2x.png */; };
+		890B885017AC360000069298 /* todoTabBarUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5C7177B7AD3001B0CAE /* todoTabBarUnselected.png */; };
+		890B885117AC360000069298 /* todoTabBarUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5C8177B7AD3001B0CAE /* todoTabBarUnselected@2x.png */; };
+		890B885217AC360000069298 /* toolboxTabBarUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5C9177B7AD3001B0CAE /* toolboxTabBarUnselected.png */; };
+		890B885317AC360000069298 /* toolboxTabBarUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5CA177B7AD3001B0CAE /* toolboxTabBarUnselected@2x.png */; };
+		890B885417AC360000069298 /* trophyTabBarUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5CB177B7AD3001B0CAE /* trophyTabBarUnselected.png */; };
+		890B885517AC360000069298 /* trophyTabBarUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5CC177B7AD3001B0CAE /* trophyTabBarUnselected@2x.png */; };
+		890B885617AC360000069298 /* locationArrowTabBarUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F5FB177B7B17001B0CAE /* locationArrowTabBarUnselected@2x.png */; };
+		890B885717AC360000069298 /* qrScannerTabBarUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F65B177B82A6001B0CAE /* qrScannerTabBarUnselected.png */; };
+		890B885817AC360000069298 /* qrScannerTabBarSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F65D177B82AF001B0CAE /* qrScannerTabBarSelected.png */; };
+		890B885917AC360000069298 /* navBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F65F177B9A17001B0CAE /* navBarBackground.png */; };
+		890B885A17AC360000069298 /* cameraTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F661177B9BBB001B0CAE /* cameraTabBarSelected@2x.png */; };
+		890B885B17AC360000069298 /* magnifyTabBarSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F662177B9BBB001B0CAE /* magnifyTabBarSelected.png */; };
+		890B885C17AC360000069298 /* magnifyTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F663177B9BBB001B0CAE /* magnifyTabBarSelected@2x.png */; };
+		890B885D17AC360000069298 /* microphoneTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F664177B9BBC001B0CAE /* microphoneTabBarSelected@2x.png */; };
+		890B885E17AC360000069298 /* qrScannerTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F665177B9BBC001B0CAE /* qrScannerTabBarSelected@2x.png */; };
+		890B885F17AC360000069298 /* cameraTabBarUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F66B177B9BCA001B0CAE /* cameraTabBarUnselected@2x.png */; };
+		890B886017AC360000069298 /* magnifyTabBarUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F66C177B9BCA001B0CAE /* magnifyTabBarUnselected.png */; };
+		890B886117AC360000069298 /* magnifyTabBarUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F66D177B9BCA001B0CAE /* magnifyTabBarUnselected@2x.png */; };
+		890B886217AC360000069298 /* microphoneTabBarUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F66E177B9BCA001B0CAE /* microphoneTabBarUnselected@2x.png */; };
+		890B886317AC360000069298 /* qrScannerTabBarUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7152F66F177B9BCB001B0CAE /* qrScannerTabBarUnselected@2x.png */; };
+		890B886517AC360000069298 /* 05-shuffle.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B1D9980178CC3A700661453 /* 05-shuffle.png */; };
+		890B886617AC360000069298 /* 05-shuffle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B1D9981178CC3A700661453 /* 05-shuffle@2x.png */; };
+		890B886717AC360000069298 /* 29-circle-pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B1D9982178CC3A700661453 /* 29-circle-pause.png */; };
+		890B886817AC360000069298 /* 29-circle-pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B1D9983178CC3A700661453 /* 29-circle-pause@2x.png */; };
+		890B886917AC360000069298 /* 30-circle-play.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B1D9984178CC3A700661453 /* 30-circle-play.png */; };
+		890B886A17AC360000069298 /* 30-circle-play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B1D9985178CC3A700661453 /* 30-circle-play@2x.png */; };
+		890B886B17AC360000069298 /* 35-circle-stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B1D9986178CC3A700661453 /* 35-circle-stop.png */; };
+		890B886C17AC360000069298 /* 35-circle-stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B1D9987178CC3A700661453 /* 35-circle-stop@2x.png */; };
+		890B886D17AC360000069298 /* 3x1_fade_up.png in Resources */ = {isa = PBXBuildFile; fileRef = AA73FB5817A7178B00D6495F /* 3x1_fade_up.png */; };
+		890B886E17AC360000069298 /* 3x1_fade_down.png in Resources */ = {isa = PBXBuildFile; fileRef = AA73FB5917A7178B00D6495F /* 3x1_fade_down.png */; };
+		890B886F17AC360000069298 /* qr_nowhite.png in Resources */ = {isa = PBXBuildFile; fileRef = AA856FF317A9AFA900E9D451 /* qr_nowhite.png */; };
+		890B887017AC360000069298 /* qr.png in Resources */ = {isa = PBXBuildFile; fileRef = AA856FF417A9AFA900E9D451 /* qr.png */; };
+		890B887117AC360000069298 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = 8902C4A717AC09E700C80803 /* dsym_upload.sh */; };
+		890B887317AC360000069298 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BBA6A6417822F5E00387DBD /* Accelerate.framework */; };
+		890B887417AC360000069298 /* libZXingWidget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF81FA0174BC73C0003D848 /* libZXingWidget.a */; };
+		890B887517AC360000069298 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB2CDC513C7498A00F051E4 /* AddressBook.framework */; };
+		890B887617AC360000069298 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7D277713C7556100F10AD5 /* AddressBookUI.framework */; };
+		890B887717AC360000069298 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113F56DD14E4435300525BE6 /* AssetsLibrary.framework */; };
+		890B887817AC360000069298 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7955B920F73E095005148E4 /* AudioToolbox.framework */; };
+		890B887917AC360000069298 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0DE80811559D0500A6EC3E /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		890B887A17AC360000069298 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D366DE111B6789009C4D00 /* CFNetwork.framework */; };
+		890B887B17AC360000069298 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0DE80C11559D1200A6EC3E /* CoreAudio.framework */; };
+		890B887C17AC360000069298 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD5C40714E0661E00081B20 /* CoreData.framework */; };
+		890B887D17AC360000069298 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78FD8B10F4B7EA200820FEA /* CoreGraphics.framework */; };
+		890B887E17AC360000069298 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E4C8980F54C5E300C6D9E8 /* CoreLocation.framework */; };
+		890B887F17AC360000069298 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7D277913C7559800F10AD5 /* CoreMedia.framework */; };
+		890B888017AC360000069298 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BE77A613B26515000D037B /* CoreMotion.framework */; };
+		890B888117AC360000069298 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB2CDC313C7497400F051E4 /* CoreVideo.framework */; };
+		890B888217AC360000069298 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78FD8AF0F4B7E9400820FEA /* Foundation.framework */; };
+		890B888317AC360000069298 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB24ACA152B8CE500B49876 /* ImageIO.framework */; };
+		890B888417AC360000069298 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDA40DD10506CB300823A94 /* MapKit.framework */; };
+		890B888517AC360000069298 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB70F39313153BB500BD06CD /* MessageUI.framework */; };
+		890B888617AC360000069298 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79202630F8E717C0049F990 /* MediaPlayer.framework */; };
+		890B888717AC360000069298 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF4A3B0116847F50043EB1C /* MobileCoreServices.framework */; };
+		890B888817AC360000069298 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BE779E13B0FCC7000D037B /* OpenGLES.framework */; };
+		890B888917AC360000069298 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E4C88B0F54C4D000C6D9E8 /* QuartzCore.framework */; };
+		890B888A17AC360000069298 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF4A3AC116847E40043EB1C /* SystemConfiguration.framework */; };
+		890B888B17AC360000069298 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1E2D4F1652CC7500219535 /* Security.framework */; };
+		890B888C17AC360000069298 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		890B888D17AC360000069298 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB38DB3B13E4A1DE001EFF52 /* libiconv.dylib */; };
+		890B888E17AC360000069298 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1E2D4D1652CC6000219535 /* libicucore.dylib */; };
+		890B888F17AC360000069298 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9BA24813DFBAB1007470E3 /* libz.dylib */; };
+		890B889017AC360000069298 /* libBump.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AABC71BA172739D70074CC21 /* libBump.a */; };
+		890B889117AC360000069298 /* libPusher-combined.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AABC7225172739D70074CC21 /* libPusher-combined.a */; };
+		890B889217AC360000069298 /* libCrittercism_v4_0_6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8902C4A817AC09E700C80803 /* libCrittercism_v4_0_6.a */; };
+		890B88D517AC360900069298 /* AccountSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B889E17AC360800069298 /* AccountSettingsViewController.xib */; };
+		890B88D617AC360900069298 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B889F17AC360900069298 /* ChangePasswordViewController.xib */; };
+		890B88D717AC360900069298 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88A017AC360900069298 /* ForgotPasswordViewController.xib */; };
+		890B88D817AC360900069298 /* PlayerSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88A117AC360900069298 /* PlayerSettingsViewController.xib */; };
+		890B88D917AC360900069298 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88A217AC360900069298 /* CommentCell.xib */; };
+		890B88DA17AC360900069298 /* CommentsFormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88A317AC360900069298 /* CommentsFormCell.xib */; };
+		890B88DB17AC360900069298 /* commentsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88A417AC360900069298 /* commentsView.xib */; };
+		890B88DC17AC360900069298 /* GameDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88A517AC360900069298 /* GameDetailsViewController.xib */; };
+		890B88DD17AC360900069298 /* RatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88A617AC360900069298 /* RatingCell.xib */; };
+		890B88DE17AC360900069298 /* GamePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88A717AC360900069298 /* GamePickerCell.xib */; };
+		890B88DF17AC360900069298 /* GamePickerNearbyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88A817AC360900069298 /* GamePickerNearbyViewController.xib */; };
+		890B88E017AC360900069298 /* GamePickerPopularViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88A917AC360900069298 /* GamePickerPopularViewController.xib */; };
+		890B88E117AC360900069298 /* GamePickerRecentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88AA17AC360900069298 /* GamePickerRecentViewController.xib */; };
+		890B88E217AC360900069298 /* GamePickerSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88AB17AC360900069298 /* GamePickerSearchViewController.xib */; };
+		890B88E317AC360900069298 /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88AC17AC360900069298 /* LoadingViewController.xib */; };
+		890B88E517AC360900069298 /* SelfRegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88AE17AC360900069298 /* SelfRegistrationViewController.xib */; };
+		890B88E617AC360900069298 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88AF17AC360900069298 /* MainWindow.xib */; };
+		890B88E717AC360900069298 /* PanoramicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88B017AC360900069298 /* PanoramicViewController.xib */; };
+		890B88E817AC360900069298 /* PopOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88B117AC360900069298 /* PopOverViewController.xib */; };
+		890B88E917AC360900069298 /* ARView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88B217AC360900069298 /* ARView.xib */; };
+		890B88EA17AC360900069298 /* AttributesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88B317AC360900069298 /* AttributesViewController.xib */; };
+		890B88EB17AC360900069298 /* InventoryTradeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88B417AC360900069298 /* InventoryTradeViewController.xib */; };
+		890B88EC17AC360900069298 /* NearbyObjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88B517AC360900069298 /* NearbyObjectCell.xib */; };
+		890B88ED17AC360900069298 /* NearbyObjectsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88B617AC360900069298 /* NearbyObjectsViewController.xib */; };
+		890B88EE17AC360900069298 /* AudioPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88B717AC360900069298 /* AudioPlayerViewController.xib */; };
+		890B88EF17AC360900069298 /* AudioRecorderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88B817AC360900069298 /* AudioRecorderViewController.xib */; };
+		890B88F017AC360900069298 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88B917AC360900069298 /* CameraViewController.xib */; };
+		890B88F117AC360900069298 /* DropOnMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88BA17AC360900069298 /* DropOnMapViewController.xib */; };
+		890B88F217AC360900069298 /* ImageViewer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88BB17AC360900069298 /* ImageViewer.xib */; };
+		890B88F317AC360900069298 /* NotebookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88BC17AC360900069298 /* NotebookViewController.xib */; };
+		890B88F417AC360900069298 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88BD17AC360900069298 /* NoteCell.xib */; };
+		890B88F517AC360900069298 /* NoteCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88BE17AC360900069298 /* NoteCommentCell.xib */; };
+		890B88F617AC360900069298 /* NoteCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88BF17AC360900069298 /* NoteCommentViewController.xib */; };
+		890B88F717AC360900069298 /* NoteContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88C017AC360900069298 /* NoteContentCell.xib */; };
+		890B88F817AC360900069298 /* NoteDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88C117AC360900069298 /* NoteDetailsViewController.xib */; };
+		890B88F917AC360900069298 /* NoteEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88C217AC360900069298 /* NoteEditorViewController.xib */; };
+		890B88FA17AC360900069298 /* TagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88C317AC360900069298 /* TagCell.xib */; };
+		890B88FB17AC360900069298 /* TagViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88C417AC360900069298 /* TagViewController.xib */; };
+		890B88FC17AC360900069298 /* TextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88C517AC360900069298 /* TextViewController.xib */; };
+		890B88FD17AC360900069298 /* IconQuestsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88C617AC360900069298 /* IconQuestsViewController.xib */; };
+		890B88FE17AC360900069298 /* QuestDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88C717AC360900069298 /* QuestDetailsViewController.xib */; };
+		890B88FF17AC360900069298 /* BumpTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88C817AC360900069298 /* BumpTestViewController.xib */; };
+		890B890017AC360900069298 /* DecoderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88C917AC360900069298 /* DecoderViewController.xib */; };
+		890B890117AC360900069298 /* InventoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88CA17AC360900069298 /* InventoryViewController.xib */; };
+		890B890217AC360900069298 /* QuestsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88CB17AC360900069298 /* QuestsViewController.xib */; };
+		890B890317AC360900069298 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88CC17AC360900069298 /* MapViewController.xib */; };
+		890B890417AC360900069298 /* WebPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88CD17AC360900069298 /* WebPageViewController.xib */; };
+		890B890517AC360900069298 /* NpcViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88CE17AC360900069298 /* NpcViewController.xib */; };
+		890B890617AC360900069298 /* NodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88CF17AC360900069298 /* NodeViewController.xib */; };
+		890B890717AC360900069298 /* ItemActionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88D017AC360900069298 /* ItemActionViewController.xib */; };
+		890B890817AC360900069298 /* ItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88D117AC360900069298 /* ItemViewController.xib */; };
+		890B890917AC360900069298 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88D217AC360900069298 /* MainWindow-iPad.xib */; };
+		890B890A17AC360900069298 /* StoreLocallyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88D317AC360900069298 /* StoreLocallyViewController.xib */; };
+		890B890B17AC360900069298 /* AudioVisualizerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B88D417AC360900069298 /* AudioVisualizerViewController.xib */; };
+		890B890D17AC383300069298 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B890C17AC383300069298 /* LoginViewController.xib */; };
 		A78FD8B00F4B7E9400820FEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78FD8AF0F4B7E9400820FEA /* Foundation.framework */; };
 		A78FD8B20F4B7EA200820FEA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78FD8B10F4B7EA200820FEA /* CoreGraphics.framework */; };
 		A79202640F8E717C0049F990 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79202630F8E717C0049F990 /* MediaPlayer.framework */; };
@@ -534,6 +1058,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		890B868317AC360000069298 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAF81F9A174BC73C0003D848 /* ZXingWidget.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = ZXingWidget;
+		};
 		AAF6FE32174FBCBC00C3E687 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AAF81F9A174BC73C0003D848 /* ZXingWidget.xcodeproj */;
@@ -653,6 +1184,63 @@
 		8902C4A617AC09E700C80803 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
 		8902C4A717AC09E700C80803 /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
 		8902C4A817AC09E700C80803 /* libCrittercism_v4_0_6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_0_6.a; sourceTree = "<group>"; };
+		890B889717AC360000069298 /* ARIS-iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ARIS-iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		890B889C17AC360000069298 /* ARIS copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ARIS copy-Info.plist"; path = "/Users/JacobHanshaw/Desktop/ARIS/iOSClient/ARIS copy-Info.plist"; sourceTree = "<absolute>"; };
+		890B889E17AC360800069298 /* AccountSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AccountSettingsViewController.xib; path = "Resources-iPad/src/account_settings/AccountSettingsViewController.xib"; sourceTree = "<group>"; };
+		890B889F17AC360900069298 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ChangePasswordViewController.xib; path = "Resources-iPad/src/account_settings/ChangePasswordViewController.xib"; sourceTree = "<group>"; };
+		890B88A017AC360900069298 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ForgotPasswordViewController.xib; path = "Resources-iPad/src/account_settings/ForgotPasswordViewController.xib"; sourceTree = "<group>"; };
+		890B88A117AC360900069298 /* PlayerSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PlayerSettingsViewController.xib; path = "Resources-iPad/src/account_settings/PlayerSettingsViewController.xib"; sourceTree = "<group>"; };
+		890B88A217AC360900069298 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CommentCell.xib; path = "Resources-iPad/src/game_details/CommentCell.xib"; sourceTree = "<group>"; };
+		890B88A317AC360900069298 /* CommentsFormCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CommentsFormCell.xib; path = "Resources-iPad/src/game_details/CommentsFormCell.xib"; sourceTree = "<group>"; };
+		890B88A417AC360900069298 /* commentsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = commentsView.xib; path = "Resources-iPad/src/game_details/commentsView.xib"; sourceTree = "<group>"; };
+		890B88A517AC360900069298 /* GameDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GameDetailsViewController.xib; path = "Resources-iPad/src/game_details/GameDetailsViewController.xib"; sourceTree = "<group>"; };
+		890B88A617AC360900069298 /* RatingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RatingCell.xib; path = "Resources-iPad/src/game_details/RatingCell.xib"; sourceTree = "<group>"; };
+		890B88A717AC360900069298 /* GamePickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GamePickerCell.xib; path = "Resources-iPad/src/game_pickers/GamePickerCell.xib"; sourceTree = "<group>"; };
+		890B88A817AC360900069298 /* GamePickerNearbyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GamePickerNearbyViewController.xib; path = "Resources-iPad/src/game_pickers/nearby/GamePickerNearbyViewController.xib"; sourceTree = "<group>"; };
+		890B88A917AC360900069298 /* GamePickerPopularViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GamePickerPopularViewController.xib; path = "Resources-iPad/src/game_pickers/popular/GamePickerPopularViewController.xib"; sourceTree = "<group>"; };
+		890B88AA17AC360900069298 /* GamePickerRecentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GamePickerRecentViewController.xib; path = "Resources-iPad/src/game_pickers/recent/GamePickerRecentViewController.xib"; sourceTree = "<group>"; };
+		890B88AB17AC360900069298 /* GamePickerSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GamePickerSearchViewController.xib; path = "Resources-iPad/src/game_pickers/search/GamePickerSearchViewController.xib"; sourceTree = "<group>"; };
+		890B88AC17AC360900069298 /* LoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoadingViewController.xib; path = "Resources-iPad/src/loading_controller/LoadingViewController.xib"; sourceTree = "<group>"; };
+		890B88AE17AC360900069298 /* SelfRegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SelfRegistrationViewController.xib; path = "Resources-iPad/src/login/SelfRegistrationViewController.xib"; sourceTree = "<group>"; };
+		890B88AF17AC360900069298 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = "Resources-iPad/src/MainWindow.xib"; sourceTree = "<group>"; };
+		890B88B017AC360900069298 /* PanoramicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PanoramicViewController.xib; path = "Resources-iPad/src/object_controllers/panoramic/PanoramicViewController.xib"; sourceTree = "<group>"; };
+		890B88B117AC360900069298 /* PopOverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PopOverViewController.xib; path = "Resources-iPad/src/overlay_controllers/PopOverViewController.xib"; sourceTree = "<group>"; };
+		890B88B217AC360900069298 /* ARView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ARView.xib; path = "Resources-iPad/src/tab_controllers/ar/ARView.xib"; sourceTree = "<group>"; };
+		890B88B317AC360900069298 /* AttributesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AttributesViewController.xib; path = "Resources-iPad/src/tab_controllers/attributes/AttributesViewController.xib"; sourceTree = "<group>"; };
+		890B88B417AC360900069298 /* InventoryTradeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InventoryTradeViewController.xib; path = "Resources-iPad/src/tab_controllers/inventory/InventoryTradeViewController.xib"; sourceTree = "<group>"; };
+		890B88B517AC360900069298 /* NearbyObjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NearbyObjectCell.xib; path = "Resources-iPad/src/tab_controllers/nearby/NearbyObjectCell.xib"; sourceTree = "<group>"; };
+		890B88B617AC360900069298 /* NearbyObjectsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NearbyObjectsViewController.xib; path = "Resources-iPad/src/tab_controllers/nearby/NearbyObjectsViewController.xib"; sourceTree = "<group>"; };
+		890B88B717AC360900069298 /* AudioPlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AudioPlayerViewController.xib; path = "Resources-iPad/src/tab_controllers/notebook/AudioPlayerViewController.xib"; sourceTree = "<group>"; };
+		890B88B817AC360900069298 /* AudioRecorderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AudioRecorderViewController.xib; path = "Resources-iPad/src/tab_controllers/notebook/AudioRecorderViewController.xib"; sourceTree = "<group>"; };
+		890B88B917AC360900069298 /* CameraViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CameraViewController.xib; path = "Resources-iPad/src/tab_controllers/notebook/CameraViewController.xib"; sourceTree = "<group>"; };
+		890B88BA17AC360900069298 /* DropOnMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DropOnMapViewController.xib; path = "Resources-iPad/src/tab_controllers/notebook/DropOnMapViewController.xib"; sourceTree = "<group>"; };
+		890B88BB17AC360900069298 /* ImageViewer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ImageViewer.xib; path = "Resources-iPad/src/tab_controllers/notebook/ImageViewer.xib"; sourceTree = "<group>"; };
+		890B88BC17AC360900069298 /* NotebookViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NotebookViewController.xib; path = "Resources-iPad/src/tab_controllers/notebook/NotebookViewController.xib"; sourceTree = "<group>"; };
+		890B88BD17AC360900069298 /* NoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NoteCell.xib; path = "Resources-iPad/src/tab_controllers/notebook/NoteCell.xib"; sourceTree = "<group>"; };
+		890B88BE17AC360900069298 /* NoteCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NoteCommentCell.xib; path = "Resources-iPad/src/tab_controllers/notebook/NoteCommentCell.xib"; sourceTree = "<group>"; };
+		890B88BF17AC360900069298 /* NoteCommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NoteCommentViewController.xib; path = "Resources-iPad/src/tab_controllers/notebook/NoteCommentViewController.xib"; sourceTree = "<group>"; };
+		890B88C017AC360900069298 /* NoteContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NoteContentCell.xib; path = "Resources-iPad/src/tab_controllers/notebook/NoteContentCell.xib"; sourceTree = "<group>"; };
+		890B88C117AC360900069298 /* NoteDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NoteDetailsViewController.xib; path = "Resources-iPad/src/tab_controllers/notebook/NoteDetailsViewController.xib"; sourceTree = "<group>"; };
+		890B88C217AC360900069298 /* NoteEditorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NoteEditorViewController.xib; path = "Resources-iPad/src/tab_controllers/notebook/NoteEditorViewController.xib"; sourceTree = "<group>"; };
+		890B88C317AC360900069298 /* TagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TagCell.xib; path = "Resources-iPad/src/tab_controllers/notebook/TagCell.xib"; sourceTree = "<group>"; };
+		890B88C417AC360900069298 /* TagViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TagViewController.xib; path = "Resources-iPad/src/tab_controllers/notebook/TagViewController.xib"; sourceTree = "<group>"; };
+		890B88C517AC360900069298 /* TextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TextViewController.xib; path = "Resources-iPad/src/tab_controllers/notebook/TextViewController.xib"; sourceTree = "<group>"; };
+		890B88C617AC360900069298 /* IconQuestsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = IconQuestsViewController.xib; path = "Resources-iPad/src/tab_controllers/quests/IconQuestsViewController.xib"; sourceTree = "<group>"; };
+		890B88C717AC360900069298 /* QuestDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = QuestDetailsViewController.xib; path = "Resources-iPad/src/tab_controllers/quests/QuestDetailsViewController.xib"; sourceTree = "<group>"; };
+		890B88C817AC360900069298 /* BumpTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BumpTestViewController.xib; path = "Resources-iPad/src/third_party/bump/BumpTestViewController.xib"; sourceTree = "<group>"; };
+		890B88C917AC360900069298 /* DecoderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DecoderViewController.xib; path = "Resources-iPad/src/tab_controllers/decoder/DecoderViewController.xib"; sourceTree = "<group>"; };
+		890B88CA17AC360900069298 /* InventoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InventoryViewController.xib; path = "Resources-iPad/src/tab_controllers/inventory/InventoryViewController.xib"; sourceTree = "<group>"; };
+		890B88CB17AC360900069298 /* QuestsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = QuestsViewController.xib; path = "Resources-iPad/src/tab_controllers/quests/QuestsViewController.xib"; sourceTree = "<group>"; };
+		890B88CC17AC360900069298 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MapViewController.xib; path = "Resources-iPad/src/tab_controllers/map/MapViewController.xib"; sourceTree = "<group>"; };
+		890B88CD17AC360900069298 /* WebPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = WebPageViewController.xib; path = "Resources-iPad/src/object_controllers/webpage/WebPageViewController.xib"; sourceTree = "<group>"; };
+		890B88CE17AC360900069298 /* NpcViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NpcViewController.xib; path = "Resources-iPad/src/object_controllers/npc/NpcViewController.xib"; sourceTree = "<group>"; };
+		890B88CF17AC360900069298 /* NodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NodeViewController.xib; path = "Resources-iPad/src/object_controllers/node/NodeViewController.xib"; sourceTree = "<group>"; };
+		890B88D017AC360900069298 /* ItemActionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ItemActionViewController.xib; path = "Resources-iPad/src/object_controllers/item/ItemActionViewController.xib"; sourceTree = "<group>"; };
+		890B88D117AC360900069298 /* ItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ItemViewController.xib; path = "Resources-iPad/src/object_controllers/item/ItemViewController.xib"; sourceTree = "<group>"; };
+		890B88D217AC360900069298 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/src/iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		890B88D317AC360900069298 /* StoreLocallyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = StoreLocallyViewController.xib; path = "Resources-iPad/src/offline/StoreLocallyViewController.xib"; sourceTree = "<group>"; };
+		890B88D417AC360900069298 /* AudioVisualizerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AudioVisualizerViewController.xib; path = "Resources-iPad/src/tab_controllers/notebook/audio_visualizer/AudioVisualizerViewController.xib"; sourceTree = "<group>"; };
+		890B890C17AC383300069298 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		A78FD8AF0F4B7E9400820FEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A78FD8B10F4B7EA200820FEA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A79202630F8E717C0049F990 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -1372,6 +1960,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		890B887217AC360000069298 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				890B887317AC360000069298 /* Accelerate.framework in Frameworks */,
+				890B887417AC360000069298 /* libZXingWidget.a in Frameworks */,
+				890B887517AC360000069298 /* AddressBook.framework in Frameworks */,
+				890B887617AC360000069298 /* AddressBookUI.framework in Frameworks */,
+				890B887717AC360000069298 /* AssetsLibrary.framework in Frameworks */,
+				890B887817AC360000069298 /* AudioToolbox.framework in Frameworks */,
+				890B887917AC360000069298 /* AVFoundation.framework in Frameworks */,
+				890B887A17AC360000069298 /* CFNetwork.framework in Frameworks */,
+				890B887B17AC360000069298 /* CoreAudio.framework in Frameworks */,
+				890B887C17AC360000069298 /* CoreData.framework in Frameworks */,
+				890B887D17AC360000069298 /* CoreGraphics.framework in Frameworks */,
+				890B887E17AC360000069298 /* CoreLocation.framework in Frameworks */,
+				890B887F17AC360000069298 /* CoreMedia.framework in Frameworks */,
+				890B888017AC360000069298 /* CoreMotion.framework in Frameworks */,
+				890B888117AC360000069298 /* CoreVideo.framework in Frameworks */,
+				890B888217AC360000069298 /* Foundation.framework in Frameworks */,
+				890B888317AC360000069298 /* ImageIO.framework in Frameworks */,
+				890B888417AC360000069298 /* MapKit.framework in Frameworks */,
+				890B888517AC360000069298 /* MessageUI.framework in Frameworks */,
+				890B888617AC360000069298 /* MediaPlayer.framework in Frameworks */,
+				890B888717AC360000069298 /* MobileCoreServices.framework in Frameworks */,
+				890B888817AC360000069298 /* OpenGLES.framework in Frameworks */,
+				890B888917AC360000069298 /* QuartzCore.framework in Frameworks */,
+				890B888A17AC360000069298 /* SystemConfiguration.framework in Frameworks */,
+				890B888B17AC360000069298 /* Security.framework in Frameworks */,
+				890B888C17AC360000069298 /* UIKit.framework in Frameworks */,
+				890B888D17AC360000069298 /* libiconv.dylib in Frameworks */,
+				890B888E17AC360000069298 /* libicucore.dylib in Frameworks */,
+				890B888F17AC360000069298 /* libz.dylib in Frameworks */,
+				890B889017AC360000069298 /* libBump.a in Frameworks */,
+				890B889117AC360000069298 /* libPusher-combined.a in Frameworks */,
+				890B889217AC360000069298 /* libCrittercism_v4_0_6.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -1379,6 +2006,7 @@
 			isa = PBXGroup;
 			children = (
 				A7A172720F4F26280017E865 /* ARIS.app */,
+				890B889717AC360000069298 /* ARIS-iPad.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1386,7 +2014,9 @@
 		29B97314FDCFA39411CA2CEA /* ARIS */ = {
 			isa = PBXGroup;
 			children = (
+				890B889B17AC360000069298 /* Resources-iPad */,
 				AABC74E317273A0F0074CC21 /* Info.plist */,
+				890B889C17AC360000069298 /* ARIS copy-Info.plist */,
 				AB0A5BA3120365420065CE68 /* Localizable.strings */,
 				AB1CA8AA13C7CC9000131F81 /* Frameworks and Dependancies */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -1527,6 +2157,68 @@
 				8902C4A817AC09E700C80803 /* libCrittercism_v4_0_6.a */,
 			);
 			path = CrittercismSDK;
+			sourceTree = "<group>";
+		};
+		890B889B17AC360000069298 /* Resources-iPad */ = {
+			isa = PBXGroup;
+			children = (
+				890B889E17AC360800069298 /* AccountSettingsViewController.xib */,
+				890B889F17AC360900069298 /* ChangePasswordViewController.xib */,
+				890B88A017AC360900069298 /* ForgotPasswordViewController.xib */,
+				890B88A117AC360900069298 /* PlayerSettingsViewController.xib */,
+				890B88A217AC360900069298 /* CommentCell.xib */,
+				890B88A317AC360900069298 /* CommentsFormCell.xib */,
+				890B88A417AC360900069298 /* commentsView.xib */,
+				890B88A517AC360900069298 /* GameDetailsViewController.xib */,
+				890B88A617AC360900069298 /* RatingCell.xib */,
+				890B88A717AC360900069298 /* GamePickerCell.xib */,
+				890B88A817AC360900069298 /* GamePickerNearbyViewController.xib */,
+				890B88A917AC360900069298 /* GamePickerPopularViewController.xib */,
+				890B88AA17AC360900069298 /* GamePickerRecentViewController.xib */,
+				890B88AB17AC360900069298 /* GamePickerSearchViewController.xib */,
+				890B88AC17AC360900069298 /* LoadingViewController.xib */,
+				890B88AE17AC360900069298 /* SelfRegistrationViewController.xib */,
+				890B88AF17AC360900069298 /* MainWindow.xib */,
+				890B88B017AC360900069298 /* PanoramicViewController.xib */,
+				890B88B117AC360900069298 /* PopOverViewController.xib */,
+				890B88B217AC360900069298 /* ARView.xib */,
+				890B88B317AC360900069298 /* AttributesViewController.xib */,
+				890B88B417AC360900069298 /* InventoryTradeViewController.xib */,
+				890B88B517AC360900069298 /* NearbyObjectCell.xib */,
+				890B88B617AC360900069298 /* NearbyObjectsViewController.xib */,
+				890B88B717AC360900069298 /* AudioPlayerViewController.xib */,
+				890B88B817AC360900069298 /* AudioRecorderViewController.xib */,
+				890B88B917AC360900069298 /* CameraViewController.xib */,
+				890B88BA17AC360900069298 /* DropOnMapViewController.xib */,
+				890B88BB17AC360900069298 /* ImageViewer.xib */,
+				890B88BC17AC360900069298 /* NotebookViewController.xib */,
+				890B88BD17AC360900069298 /* NoteCell.xib */,
+				890B88BE17AC360900069298 /* NoteCommentCell.xib */,
+				890B88BF17AC360900069298 /* NoteCommentViewController.xib */,
+				890B88C017AC360900069298 /* NoteContentCell.xib */,
+				890B88C117AC360900069298 /* NoteDetailsViewController.xib */,
+				890B88C217AC360900069298 /* NoteEditorViewController.xib */,
+				890B88C317AC360900069298 /* TagCell.xib */,
+				890B88C417AC360900069298 /* TagViewController.xib */,
+				890B88C517AC360900069298 /* TextViewController.xib */,
+				890B88C617AC360900069298 /* IconQuestsViewController.xib */,
+				890B88C717AC360900069298 /* QuestDetailsViewController.xib */,
+				890B88C817AC360900069298 /* BumpTestViewController.xib */,
+				890B88C917AC360900069298 /* DecoderViewController.xib */,
+				890B88CA17AC360900069298 /* InventoryViewController.xib */,
+				890B88CB17AC360900069298 /* QuestsViewController.xib */,
+				890B88CC17AC360900069298 /* MapViewController.xib */,
+				890B88CD17AC360900069298 /* WebPageViewController.xib */,
+				890B890C17AC383300069298 /* LoginViewController.xib */,
+				890B88CE17AC360900069298 /* NpcViewController.xib */,
+				890B88CF17AC360900069298 /* NodeViewController.xib */,
+				890B88D017AC360900069298 /* ItemActionViewController.xib */,
+				890B88D117AC360900069298 /* ItemViewController.xib */,
+				890B88D217AC360900069298 /* MainWindow-iPad.xib */,
+				890B88D317AC360900069298 /* StoreLocallyViewController.xib */,
+				890B88D417AC360900069298 /* AudioVisualizerViewController.xib */,
+			);
+			name = "Resources-iPad";
 			sourceTree = "<group>";
 		};
 		AA3D7C6A17662C1F00382D00 /* MTStatusBarOverlay */ = {
@@ -2686,6 +3378,25 @@
 			productReference = A7A172720F4F26280017E865 /* ARIS.app */;
 			productType = "com.apple.product-type.application";
 		};
+		890B868117AC360000069298 /* ARIS-iPad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 890B889417AC360000069298 /* Build configuration list for PBXNativeTarget "ARIS-iPad" */;
+			buildPhases = (
+				890B868417AC360000069298 /* Sources */,
+				890B875417AC360000069298 /* Resources */,
+				890B887217AC360000069298 /* Frameworks */,
+				890B889317AC360000069298 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				890B868217AC360000069298 /* PBXTargetDependency */,
+			);
+			name = "ARIS-iPad";
+			productName = ARIS;
+			productReference = 890B889717AC360000069298 /* ARIS-iPad.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -2718,6 +3429,7 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* ARIS */,
+				890B868117AC360000069298 /* ARIS-iPad */,
 			);
 		};
 /* End PBXProject section */
@@ -3032,9 +3744,314 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		890B875417AC360000069298 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				890B875517AC360000069298 /* arisjs.js in Resources */,
+				890B875617AC360000069298 /* Localizable.strings in Resources */,
+				890B875717AC360000069298 /* Settings.bundle in Resources */,
+				890B875817AC360000069298 /* 103-map.png in Resources */,
+				890B875917AC360000069298 /* 103-map@2x.png in Resources */,
+				890B875A17AC360000069298 /* 117-todo.png in Resources */,
+				890B875B17AC360000069298 /* 117-todo@2x.png in Resources */,
+				890B875C17AC360000069298 /* 123-id-card.png in Resources */,
+				890B875D17AC360000069298 /* 123-id-card@2x.png in Resources */,
+				890B875E17AC360000069298 /* 14-gear.png in Resources */,
+				890B875F17AC360000069298 /* 14-gear@2x.png in Resources */,
+				890B876017AC360000069298 /* 16-tag.png in Resources */,
+				890B876117AC360000069298 /* 16-tag@2x.png in Resources */,
+				890B876217AC360000069298 /* 193-location-arrow.png in Resources */,
+				890B876317AC360000069298 /* 193-location-arrow@2x.png in Resources */,
+				890B876417AC360000069298 /* 213-reply.png in Resources */,
+				890B876517AC360000069298 /* 213-reply@2x.png in Resources */,
+				890B876617AC360000069298 /* 298-circlex.png in Resources */,
+				890B876717AC360000069298 /* 298-circlex@2x.png in Resources */,
+				890B876817AC360000069298 /* 36-toolbox.png in Resources */,
+				890B876917AC360000069298 /* 36-toolbox@2x.png in Resources */,
+				890B876A17AC360000069298 /* 73-radar.png in Resources */,
+				890B876B17AC360000069298 /* 73-radar@2x.png in Resources */,
+				890B876C17AC360000069298 /* 74-location.png in Resources */,
+				890B876D17AC360000069298 /* 74-location@2x.png in Resources */,
+				890B876E17AC360000069298 /* 78-stopwatch.png in Resources */,
+				890B876F17AC360000069298 /* 78-stopwatch@2x.png in Resources */,
+				890B877017AC360000069298 /* 85-trophy.png in Resources */,
+				890B877117AC360000069298 /* 85-trophy@2x.png in Resources */,
+				890B877217AC360000069298 /* 96-book.png in Resources */,
+				890B877317AC360000069298 /* 96-book@2x.png in Resources */,
+				890B877417AC360000069298 /* blue_button.png in Resources */,
+				890B877517AC360000069298 /* blue_button.psd in Resources */,
+				890B877617AC360000069298 /* bump_logo_250x84.png in Resources */,
+				890B877717AC360000069298 /* Button-Play-icon.png in Resources */,
+				890B877817AC360000069298 /* buttonborder.png in Resources */,
+				890B877917AC360000069298 /* buttonborder2.png in Resources */,
+				890B877A17AC360000069298 /* camera.png in Resources */,
+				890B877B17AC360000069298 /* camera_icon.png in Resources */,
+				890B877C17AC360000069298 /* camera_roll.png in Resources */,
+				890B877D17AC360000069298 /* cameraBackground.jpg in Resources */,
+				890B877E17AC360000069298 /* check.png in Resources */,
+				890B877F17AC360000069298 /* clickToPlay.png in Resources */,
+				890B878017AC360000069298 /* comment.png in Resources */,
+				890B878117AC360000069298 /* Default.png in Resources */,
+				890B878217AC360000069298 /* defaultAudioIcon.png in Resources */,
+				890B878317AC360000069298 /* defaultCharacter.png in Resources */,
+				890B878417AC360000069298 /* DefaultGameSplash.png in Resources */,
+				890B878517AC360000069298 /* defaultImageIcon.png in Resources */,
+				890B878617AC360000069298 /* DefaultPCImage.png in Resources */,
+				890B878717AC360000069298 /* defaultVideoIcon.png in Resources */,
+				890B878817AC360000069298 /* developer.png in Resources */,
+				890B878917AC360000069298 /* game.png in Resources */,
+				890B878A17AC360000069298 /* garden_frame1.jpg in Resources */,
+				890B878B17AC360000069298 /* garden_frame2.jpg in Resources */,
+				890B878C17AC360000069298 /* garden_frame3.jpg in Resources */,
+				890B878D17AC360000069298 /* grey_button.png in Resources */,
+				890B878E17AC360000069298 /* grey_button.psd in Resources */,
+				890B878F17AC360000069298 /* img.png in Resources */,
+				890B879017AC360000069298 /* inventory.png in Resources */,
+				890B879117AC360000069298 /* item.png in Resources */,
+				890B879217AC360000069298 /* loading.png in Resources */,
+				890B879317AC360000069298 /* location.png in Resources */,
+				890B879417AC360000069298 /* LogoutButton.png in Resources */,
+				890B879517AC360000069298 /* mappoint.png in Resources */,
+				890B879617AC360000069298 /* mappoint_red.png in Resources */,
+				890B879717AC360000069298 /* marker-blue-withletter.png in Resources */,
+				890B879817AC360000069298 /* marker-blue.png in Resources */,
+				890B879917AC360000069298 /* marker-other-player.png in Resources */,
+				890B879A17AC360000069298 /* marker-player-lqgps.png in Resources */,
+				890B879B17AC360000069298 /* marker-player.png in Resources */,
+				890B879C17AC360000069298 /* marker-red-withletter.png in Resources */,
+				890B879D17AC360000069298 /* marker-red.png in Resources */,
+				890B879E17AC360000069298 /* microphone.png in Resources */,
+				890B879F17AC360000069298 /* microphoneBackground.jpg in Resources */,
+				890B87A017AC360000069298 /* microphoneForeground.png in Resources */,
+				890B87A117AC360000069298 /* newBanner.png in Resources */,
+				890B87A217AC360000069298 /* notebook.png in Resources */,
+				890B87A317AC360000069298 /* notebook2.png in Resources */,
+				890B87A417AC360000069298 /* noteicon.png in Resources */,
+				890B87A517AC360000069298 /* npc.png in Resources */,
+				890B87A617AC360000069298 /* painting.png in Resources */,
+				890B87A717AC360000069298 /* Pin.png in Resources */,
+				890B87A817AC360000069298 /* PinDown1.png in Resources */,
+				890B87A917AC360000069298 /* PinDown2.png in Resources */,
+				890B87AA17AC360000069298 /* PinDown3.png in Resources */,
+				890B87AB17AC360000069298 /* PinFloating.png in Resources */,
+				890B87AC17AC360000069298 /* PinShadow.png in Resources */,
+				890B87AD17AC360000069298 /* plaque.png in Resources */,
+				890B87AE17AC360000069298 /* play.png in Resources */,
+				890B87AF17AC360000069298 /* play_button.png in Resources */,
+				890B87B017AC360000069298 /* player.png in Resources */,
+				890B87B117AC360000069298 /* playericon.png in Resources */,
+				890B87B217AC360000069298 /* profile.png in Resources */,
+				890B87B317AC360000069298 /* profpic.png in Resources */,
+				890B87B417AC360000069298 /* public.png in Resources */,
+				890B87B517AC360000069298 /* qrBackground.png in Resources */,
+				890B87B617AC360000069298 /* qrcode_big.png in Resources */,
+				890B87B717AC360000069298 /* qrscanner.png in Resources */,
+				890B87B817AC360000069298 /* QRScannersharp.png in Resources */,
+				890B87B917AC360000069298 /* Quest.png in Resources */,
+				890B87BA17AC360000069298 /* QuestBorder.png in Resources */,
+				890B87BB17AC360000069298 /* RoundedBackground.png in Resources */,
+				890B87BC17AC360000069298 /* small-star-halfselected.png in Resources */,
+				890B87BD17AC360000069298 /* small-star-highlighted.png in Resources */,
+				890B87BE17AC360000069298 /* small-star-hot.png in Resources */,
+				890B87BF17AC360000069298 /* small-star-nonselected.png in Resources */,
+				890B87C017AC360000069298 /* small-star-selected.png in Resources */,
+				890B87C117AC360000069298 /* star-halfselected.png in Resources */,
+				890B87C217AC360000069298 /* star-highlighted.png in Resources */,
+				890B87C317AC360000069298 /* star-hot.png in Resources */,
+				890B87C417AC360000069298 /* star-nonselected.png in Resources */,
+				890B87C517AC360000069298 /* star-selected.png in Resources */,
+				890B87C617AC360000069298 /* star-userselected.png in Resources */,
+				890B87C717AC360000069298 /* stop_button.png in Resources */,
+				890B87C817AC360000069298 /* textFade.png in Resources */,
+				890B87C917AC360000069298 /* textToggle.png in Resources */,
+				890B87CA17AC360000069298 /* thumbs_up.png in Resources */,
+				890B87CB17AC360000069298 /* thumbs_up_selected.png in Resources */,
+				890B87CC17AC360000069298 /* thumbs_up_unselected.png in Resources */,
+				890B87CD17AC360000069298 /* upc.png in Resources */,
+				890B87CE17AC360000069298 /* warning-icon.png in Resources */,
+				890B87CF17AC360000069298 /* warning.png in Resources */,
+				890B87D017AC360000069298 /* click.wav in Resources */,
+				890B87D117AC360000069298 /* drop.wav in Resources */,
+				890B87D217AC360000069298 /* error.wav in Resources */,
+				890B87D317AC360000069298 /* harp.wav in Resources */,
+				890B87D417AC360000069298 /* inventoryChange.wav in Resources */,
+				890B87D517AC360000069298 /* mapChange.wav in Resources */,
+				890B87D617AC360000069298 /* nearbyObject.wav in Resources */,
+				890B87D717AC360000069298 /* pingtone.wav in Resources */,
+				890B87D817AC360000069298 /* questChange.wav in Resources */,
+				890B87D917AC360000069298 /* swish.wav in Resources */,
+				890B87DA17AC360000069298 /* ticktick.wav in Resources */,
+				890B87DB17AC360000069298 /* Bascom Hall.gpx in Resources */,
+				890B87DC17AC360000069298 /* Bascom Hill.gpx in Resources */,
+				890B87DD17AC360000069298 /* Central Park New York.gpx in Resources */,
+				890B87DE17AC360000069298 /* Chemistry.gpx in Resources */,
+				890B87DF17AC360000069298 /* Engage Offices.gpx in Resources */,
+				890B87E017AC360000069298 /* Engineering Fountain.gpx in Resources */,
+				890B87E117AC360000069298 /* Grainger.gpx in Resources */,
+				890B87E217AC360000069298 /* Institutes for Discovery.gpx in Resources */,
+				890B87E317AC360000069298 /* North Hall.gpx in Resources */,
+				890B87E417AC360000069298 /* Science Hall.gpx in Resources */,
+				890B87E517AC360000069298 /* Van Hise.gpx in Resources */,
+				890B881117AC360000069298 /* alg-outline in Resources */,
+				890B881217AC360000069298 /* README in Resources */,
+				890B881C17AC360000069298 /* 123-id-card-white@2x.png in Resources */,
+				890B881D17AC360000069298 /* 123-id-card-white.png in Resources */,
+				890B881E17AC360000069298 /* Default-568h@2x.png in Resources */,
+				890B882017AC360000069298 /* ac_location.gpx in Resources */,
+				890B882217AC360000069298 /* icon.png in Resources */,
+				890B882317AC360000069298 /* icon@2x.png in Resources */,
+				890B882417AC360000069298 /* Default-568h@2x.png in Resources */,
+				890B882517AC360000069298 /* Default@2x.png in Resources */,
+				890B882617AC360000069298 /* logo.png in Resources */,
+				890B882717AC360000069298 /* logoWithText.png in Resources */,
+				890B882817AC360000069298 /* navBarBackground44.png in Resources */,
+				890B882917AC360000069298 /* tabBarBackground.png in Resources */,
+				890B882A17AC360000069298 /* tabBarSelect.png in Resources */,
+				890B882B17AC360000069298 /* bookTabBarSelected.png in Resources */,
+				890B882C17AC360000069298 /* bookTabBarSelected@2x.png in Resources */,
+				890B882D17AC360000069298 /* cameraTabBarSelected.png in Resources */,
+				890B882E17AC360000069298 /* idCardTabBarSelected.png in Resources */,
+				890B882F17AC360000069298 /* idCardTabBarSelected@2x.png in Resources */,
+				890B883017AC360000069298 /* locationArrowTabBarSelected.png in Resources */,
+				890B883117AC360000069298 /* locationArrowTabBarSelected@2x.png in Resources */,
+				890B883217AC360000069298 /* mapTabBarSelected.png in Resources */,
+				890B883317AC360000069298 /* mapTabBarSelected@2x.png in Resources */,
+				890B883417AC360000069298 /* microphoneTabBarSelected.png in Resources */,
+				890B883517AC360000069298 /* radarTabBarSelected.png in Resources */,
+				890B883617AC360000069298 /* radarTabBarSelected@2x.png in Resources */,
+				890B883717AC360000069298 /* replyTabBarSelected.png in Resources */,
+				890B883817AC360000069298 /* replyTabBarSelected@2x.png in Resources */,
+				890B883917AC360000069298 /* stopwatchTabBarSelected.png in Resources */,
+				890B883A17AC360000069298 /* stopwatchTabBarSelected@2x.png in Resources */,
+				890B883B17AC360000069298 /* todoTabBarSelected.png in Resources */,
+				890B883C17AC360000069298 /* todoTabBarSelected@2x.png in Resources */,
+				890B883D17AC360000069298 /* toolboxTabBarSelected.png in Resources */,
+				890B883E17AC360000069298 /* toolboxTabBarSelected@2x.png in Resources */,
+				890B883F17AC360000069298 /* trophyTabBarSelected.png in Resources */,
+				890B884017AC360000069298 /* trophyTabBarSelected@2x.png in Resources */,
+				890B884117AC360000069298 /* bookTabBarUnselected.png in Resources */,
+				890B884217AC360000069298 /* bookTabBarUnselected@2x.png in Resources */,
+				890B884317AC360000069298 /* cameraTabBarUnselected.png in Resources */,
+				890B884417AC360000069298 /* idCardTabBarUnselected.png in Resources */,
+				890B884517AC360000069298 /* idCardTabBarUnselected@2x.png in Resources */,
+				890B884617AC360000069298 /* locationArrowTabBarUnselected.png in Resources */,
+				890B884717AC360000069298 /* mapTabBarUnselected.png in Resources */,
+				890B884817AC360000069298 /* mapTabBarUnselected@2x.png in Resources */,
+				890B884917AC360000069298 /* microphoneTabBarUnselected.png in Resources */,
+				890B884A17AC360000069298 /* radarTabBarUnselected.png in Resources */,
+				890B884B17AC360000069298 /* radarTabBarUnselected@2x.png in Resources */,
+				890B884C17AC360000069298 /* replyTabBarUnselected.png in Resources */,
+				890B884D17AC360000069298 /* replyTabBarUnselected@2x.png in Resources */,
+				890B884E17AC360000069298 /* stopwatchTabBarUnselected.png in Resources */,
+				890B884F17AC360000069298 /* stopwatchTabBarUnselected@2x.png in Resources */,
+				890B885017AC360000069298 /* todoTabBarUnselected.png in Resources */,
+				890B885117AC360000069298 /* todoTabBarUnselected@2x.png in Resources */,
+				890B885217AC360000069298 /* toolboxTabBarUnselected.png in Resources */,
+				890B885317AC360000069298 /* toolboxTabBarUnselected@2x.png in Resources */,
+				890B885417AC360000069298 /* trophyTabBarUnselected.png in Resources */,
+				890B885517AC360000069298 /* trophyTabBarUnselected@2x.png in Resources */,
+				890B885617AC360000069298 /* locationArrowTabBarUnselected@2x.png in Resources */,
+				890B885717AC360000069298 /* qrScannerTabBarUnselected.png in Resources */,
+				890B885817AC360000069298 /* qrScannerTabBarSelected.png in Resources */,
+				890B885917AC360000069298 /* navBarBackground.png in Resources */,
+				890B885A17AC360000069298 /* cameraTabBarSelected@2x.png in Resources */,
+				890B885B17AC360000069298 /* magnifyTabBarSelected.png in Resources */,
+				890B885C17AC360000069298 /* magnifyTabBarSelected@2x.png in Resources */,
+				890B885D17AC360000069298 /* microphoneTabBarSelected@2x.png in Resources */,
+				890B885E17AC360000069298 /* qrScannerTabBarSelected@2x.png in Resources */,
+				890B885F17AC360000069298 /* cameraTabBarUnselected@2x.png in Resources */,
+				890B886017AC360000069298 /* magnifyTabBarUnselected.png in Resources */,
+				890B886117AC360000069298 /* magnifyTabBarUnselected@2x.png in Resources */,
+				890B886217AC360000069298 /* microphoneTabBarUnselected@2x.png in Resources */,
+				890B886317AC360000069298 /* qrScannerTabBarUnselected@2x.png in Resources */,
+				890B886517AC360000069298 /* 05-shuffle.png in Resources */,
+				890B886617AC360000069298 /* 05-shuffle@2x.png in Resources */,
+				890B886717AC360000069298 /* 29-circle-pause.png in Resources */,
+				890B886817AC360000069298 /* 29-circle-pause@2x.png in Resources */,
+				890B886917AC360000069298 /* 30-circle-play.png in Resources */,
+				890B886A17AC360000069298 /* 30-circle-play@2x.png in Resources */,
+				890B886B17AC360000069298 /* 35-circle-stop.png in Resources */,
+				890B886C17AC360000069298 /* 35-circle-stop@2x.png in Resources */,
+				890B886D17AC360000069298 /* 3x1_fade_up.png in Resources */,
+				890B886E17AC360000069298 /* 3x1_fade_down.png in Resources */,
+				890B886F17AC360000069298 /* qr_nowhite.png in Resources */,
+				890B887017AC360000069298 /* qr.png in Resources */,
+				890B887117AC360000069298 /* dsym_upload.sh in Resources */,
+				890B88D517AC360900069298 /* AccountSettingsViewController.xib in Resources */,
+				890B88D617AC360900069298 /* ChangePasswordViewController.xib in Resources */,
+				890B88D717AC360900069298 /* ForgotPasswordViewController.xib in Resources */,
+				890B88D817AC360900069298 /* PlayerSettingsViewController.xib in Resources */,
+				890B88D917AC360900069298 /* CommentCell.xib in Resources */,
+				890B88DA17AC360900069298 /* CommentsFormCell.xib in Resources */,
+				890B88DB17AC360900069298 /* commentsView.xib in Resources */,
+				890B88DC17AC360900069298 /* GameDetailsViewController.xib in Resources */,
+				890B88DD17AC360900069298 /* RatingCell.xib in Resources */,
+				890B88DE17AC360900069298 /* GamePickerCell.xib in Resources */,
+				890B88DF17AC360900069298 /* GamePickerNearbyViewController.xib in Resources */,
+				890B88E017AC360900069298 /* GamePickerPopularViewController.xib in Resources */,
+				890B88E117AC360900069298 /* GamePickerRecentViewController.xib in Resources */,
+				890B88E217AC360900069298 /* GamePickerSearchViewController.xib in Resources */,
+				890B88E317AC360900069298 /* LoadingViewController.xib in Resources */,
+				890B88E517AC360900069298 /* SelfRegistrationViewController.xib in Resources */,
+				890B88E617AC360900069298 /* MainWindow.xib in Resources */,
+				890B88E717AC360900069298 /* PanoramicViewController.xib in Resources */,
+				890B88E817AC360900069298 /* PopOverViewController.xib in Resources */,
+				890B88E917AC360900069298 /* ARView.xib in Resources */,
+				890B88EA17AC360900069298 /* AttributesViewController.xib in Resources */,
+				890B88EB17AC360900069298 /* InventoryTradeViewController.xib in Resources */,
+				890B88EC17AC360900069298 /* NearbyObjectCell.xib in Resources */,
+				890B88ED17AC360900069298 /* NearbyObjectsViewController.xib in Resources */,
+				890B88EE17AC360900069298 /* AudioPlayerViewController.xib in Resources */,
+				890B88EF17AC360900069298 /* AudioRecorderViewController.xib in Resources */,
+				890B88F017AC360900069298 /* CameraViewController.xib in Resources */,
+				890B88F117AC360900069298 /* DropOnMapViewController.xib in Resources */,
+				890B88F217AC360900069298 /* ImageViewer.xib in Resources */,
+				890B88F317AC360900069298 /* NotebookViewController.xib in Resources */,
+				890B88F417AC360900069298 /* NoteCell.xib in Resources */,
+				890B88F517AC360900069298 /* NoteCommentCell.xib in Resources */,
+				890B88F617AC360900069298 /* NoteCommentViewController.xib in Resources */,
+				890B88F717AC360900069298 /* NoteContentCell.xib in Resources */,
+				890B88F817AC360900069298 /* NoteDetailsViewController.xib in Resources */,
+				890B88F917AC360900069298 /* NoteEditorViewController.xib in Resources */,
+				890B88FA17AC360900069298 /* TagCell.xib in Resources */,
+				890B88FB17AC360900069298 /* TagViewController.xib in Resources */,
+				890B88FC17AC360900069298 /* TextViewController.xib in Resources */,
+				890B88FD17AC360900069298 /* IconQuestsViewController.xib in Resources */,
+				890B88FE17AC360900069298 /* QuestDetailsViewController.xib in Resources */,
+				890B88FF17AC360900069298 /* BumpTestViewController.xib in Resources */,
+				890B890017AC360900069298 /* DecoderViewController.xib in Resources */,
+				890B890117AC360900069298 /* InventoryViewController.xib in Resources */,
+				890B890217AC360900069298 /* QuestsViewController.xib in Resources */,
+				890B890317AC360900069298 /* MapViewController.xib in Resources */,
+				890B890417AC360900069298 /* WebPageViewController.xib in Resources */,
+				890B890517AC360900069298 /* NpcViewController.xib in Resources */,
+				890B890617AC360900069298 /* NodeViewController.xib in Resources */,
+				890B890717AC360900069298 /* ItemActionViewController.xib in Resources */,
+				890B890817AC360900069298 /* ItemViewController.xib in Resources */,
+				890B890917AC360900069298 /* MainWindow-iPad.xib in Resources */,
+				890B890A17AC360900069298 /* StoreLocallyViewController.xib in Resources */,
+				890B890B17AC360900069298 /* AudioVisualizerViewController.xib in Resources */,
+				890B890D17AC383300069298 /* LoginViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		890B889317AC360000069298 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#APP_ID=\"5101a46d59e1bd498c000002\"\n#API_KEY=\"dvoqdekc54cfpinayo2uqf3u6nbhrty7\"\n#REQUIRE_UPLOAD_SUCCESS=0\n#source ${SRCROOT}/src/third_party/CrittercismSDK/dsym_upload.sh";
+		};
 		AB508AC8119330710002FCFA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3265,9 +4282,228 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		890B868417AC360000069298 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				890B868517AC360000069298 /* AccountSettingsViewController.m in Sources */,
+				890B868617AC360000069298 /* ChangePasswordViewController.m in Sources */,
+				890B868717AC360000069298 /* ForgotPasswordViewController.m in Sources */,
+				890B868817AC360000069298 /* PlayerSettingsViewController.m in Sources */,
+				890B868917AC360000069298 /* ARISAppDelegate.m in Sources */,
+				890B868A17AC360000069298 /* Game.m in Sources */,
+				890B868B17AC360000069298 /* Item.m in Sources */,
+				890B868C17AC360000069298 /* Location.m in Sources */,
+				890B868D17AC360000069298 /* Media.m in Sources */,
+				890B868E17AC360000069298 /* Node.m in Sources */,
+				890B868F17AC360000069298 /* NodeOption.m in Sources */,
+				890B869017AC360000069298 /* Note.m in Sources */,
+				890B869117AC360000069298 /* NoteContent.m in Sources */,
+				890B869217AC360000069298 /* Npc.m in Sources */,
+				890B869317AC360000069298 /* Overlay.m in Sources */,
+				890B869417AC360000069298 /* Panoramic.m in Sources */,
+				890B869517AC360000069298 /* PanoramicMedia.m in Sources */,
+				890B869617AC360000069298 /* Player.m in Sources */,
+				890B869717AC360000069298 /* Quest.m in Sources */,
+				890B869817AC360000069298 /* Tab.m in Sources */,
+				890B869917AC360000069298 /* Tag.m in Sources */,
+				890B869A17AC360000069298 /* WebPage.m in Sources */,
+				890B869B17AC360000069298 /* Logger.m in Sources */,
+				890B869C17AC360000069298 /* Comment.m in Sources */,
+				890B869D17AC360000069298 /* CommentCell.m in Sources */,
+				890B869E17AC360000069298 /* CommentsFormCell.m in Sources */,
+				890B869F17AC360000069298 /* commentsViewController.m in Sources */,
+				890B86A017AC360000069298 /* GameDetailsViewController.m in Sources */,
+				890B86A117AC360000069298 /* RatingCell.m in Sources */,
+				890B86A217AC360000069298 /* SCRRatingView.m in Sources */,
+				890B86A317AC360000069298 /* GamePickerCell.m in Sources */,
+				890B86A417AC360000069298 /* GamePickerViewController.m in Sources */,
+				890B86A517AC360000069298 /* GamePickerNearbyViewController.m in Sources */,
+				890B86A617AC360000069298 /* GamePickerPopularViewController.m in Sources */,
+				890B86A717AC360000069298 /* GamePickerRecentViewController.m in Sources */,
+				890B86A817AC360000069298 /* GamePickerSearchViewController.m in Sources */,
+				890B86A917AC360000069298 /* LoadingViewController.m in Sources */,
+				890B86AA17AC360000069298 /* LoginViewController.mm in Sources */,
+				890B86AB17AC360000069298 /* SelfRegistrationViewController.m in Sources */,
+				890B86AC17AC360000069298 /* main.mm in Sources */,
+				890B86AD17AC360000069298 /* ARISMoviePlayerViewController.m in Sources */,
+				890B86AE17AC360000069298 /* AsyncMediaImageView.m in Sources */,
+				890B86AF17AC360000069298 /* AsyncMediaPlayerButton.m in Sources */,
+				890B86B017AC360000069298 /* AppModel.m in Sources */,
+				890B86B117AC360000069298 /* AttributesModel.m in Sources */,
+				890B86B217AC360000069298 /* InventoryModel.m in Sources */,
+				890B86B317AC360000069298 /* LocationsModel.m in Sources */,
+				890B86B417AC360000069298 /* MediaCache.m in Sources */,
+				890B86B517AC360000069298 /* QuestsModel.m in Sources */,
+				890B86B617AC360000069298 /* MyCLController.m in Sources */,
+				890B86B717AC360000069298 /* NodeViewController.m in Sources */,
+				890B86B817AC360000069298 /* DialogScript.m in Sources */,
+				890B86B917AC360000069298 /* Scene.m in Sources */,
+				890B86BA17AC360000069298 /* SceneParser.m in Sources */,
+				890B86BB17AC360000069298 /* PanoramicViewController.m in Sources */,
+				890B86BC17AC360000069298 /* GameNotificationViewController.m in Sources */,
+				890B86BD17AC360000069298 /* PopOverContentView.m in Sources */,
+				890B86BE17AC360000069298 /* PopOverViewController.m in Sources */,
+				890B86BF17AC360000069298 /* RootViewController.m in Sources */,
+				890B86C017AC360000069298 /* AppServices.m in Sources */,
+				890B86C117AC360000069298 /* ARISUploader.m in Sources */,
+				890B86C217AC360000069298 /* ARISURLConnection.m in Sources */,
+				890B86C317AC360000069298 /* JSONConnection.m in Sources */,
+				890B86C417AC360000069298 /* ServiceResult.m in Sources */,
+				890B86C517AC360000069298 /* UploadContent.m in Sources */,
+				890B86C617AC360000069298 /* UploadContent.xcdatamodeld in Sources */,
+				890B86C717AC360000069298 /* UploadMan.m in Sources */,
+				890B86C817AC360000069298 /* ARCoordinate.m in Sources */,
+				890B86C917AC360000069298 /* ARGeoCoordinate.m in Sources */,
+				890B86CA17AC360000069298 /* ARGeoViewController.m in Sources */,
+				890B86CB17AC360000069298 /* ARViewController.m in Sources */,
+				890B86CC17AC360000069298 /* ARViewViewControler.m in Sources */,
+				890B86CD17AC360000069298 /* NearbyObjectARCoordinate.m in Sources */,
+				890B86CE17AC360000069298 /* AttributesViewController.m in Sources */,
+				890B86CF17AC360000069298 /* BogusSelectGameViewController.m in Sources */,
+				890B86D017AC360000069298 /* DecoderViewController.mm in Sources */,
+				890B86D117AC360000069298 /* InventoryTradeViewController.m in Sources */,
+				890B86D217AC360000069298 /* RoundedTableViewCell.m in Sources */,
+				890B86D317AC360000069298 /* AnnotationView.m in Sources */,
+				890B86D417AC360000069298 /* TileOverlay.m in Sources */,
+				890B86D517AC360000069298 /* TileOverlayView.m in Sources */,
+				890B86D617AC360000069298 /* NearbyObjectCell.m in Sources */,
+				890B86D717AC360000069298 /* NearbyObjectsViewController.m in Sources */,
+				890B86D817AC360000069298 /* AudioMeter.m in Sources */,
+				890B86D917AC360000069298 /* AudioPlayerViewController.m in Sources */,
+				890B86DA17AC360000069298 /* AudioRecorderViewController.m in Sources */,
+				890B86DB17AC360000069298 /* CameraViewController.m in Sources */,
+				890B86DC17AC360000069298 /* DDAnnotation.m in Sources */,
+				890B86DD17AC360000069298 /* DDAnnotationView.m in Sources */,
+				890B86DE17AC360000069298 /* DropOnMapViewController.m in Sources */,
+				890B86DF17AC360000069298 /* ImageViewer.m in Sources */,
+				890B86E017AC360000069298 /* NotebookViewController.m in Sources */,
+				890B86E117AC360000069298 /* NoteCell.m in Sources */,
+				890B86E217AC360000069298 /* NoteCommentCell.m in Sources */,
+				890B86E317AC360000069298 /* NoteCommentViewController.m in Sources */,
+				890B86E417AC360000069298 /* NoteContentCell.m in Sources */,
+				890B86E517AC360000069298 /* NoteDetailsViewController.m in Sources */,
+				890B86E617AC360000069298 /* NoteEditorViewController.m in Sources */,
+				890B86E717AC360000069298 /* TagCell.m in Sources */,
+				890B86E817AC360000069298 /* TagViewController.m in Sources */,
+				890B86E917AC360000069298 /* TextViewController.m in Sources */,
+				890B86EA17AC360000069298 /* IconQuestsViewController.m in Sources */,
+				890B86EB17AC360000069298 /* QuestDetailsViewController.m in Sources */,
+				890B86EC17AC360000069298 /* QuestsViewController.m in Sources */,
+				890B86ED17AC360000069298 /* BumpTestViewController.m in Sources */,
+				890B86EE17AC360000069298 /* JSONKit.m in Sources */,
+				890B86EF17AC360000069298 /* NSObject+SBJSON.m in Sources */,
+				890B86F017AC360000069298 /* NSString+SBJSON.m in Sources */,
+				890B86F117AC360000069298 /* SBJSON.m in Sources */,
+				890B86F217AC360000069298 /* SBJsonBase.m in Sources */,
+				890B86F317AC360000069298 /* SBJsonParser.m in Sources */,
+				890B86F417AC360000069298 /* SBJsonWriter.m in Sources */,
+				890B86F517AC360000069298 /* glues_error.c in Sources */,
+				890B86F617AC360000069298 /* glues_mipmap.c in Sources */,
+				890B86F717AC360000069298 /* glues_project.c in Sources */,
+				890B86F817AC360000069298 /* glues_quad.c in Sources */,
+				890B86F917AC360000069298 /* glues_registry.c in Sources */,
+				890B86FA17AC360000069298 /* dict.c in Sources */,
+				890B86FB17AC360000069298 /* geom.c in Sources */,
+				890B86FC17AC360000069298 /* memalloc.c in Sources */,
+				890B86FD17AC360000069298 /* mesh.c in Sources */,
+				890B86FE17AC360000069298 /* normal.c in Sources */,
+				890B86FF17AC360000069298 /* priorityq-heap.c in Sources */,
+				890B870017AC360000069298 /* priorityq.c in Sources */,
+				890B870117AC360000069298 /* render.c in Sources */,
+				890B870217AC360000069298 /* sweep.c in Sources */,
+				890B870317AC360000069298 /* tess.c in Sources */,
+				890B870417AC360000069298 /* tessmono.c in Sources */,
+				890B870517AC360000069298 /* PLCamera.m in Sources */,
+				890B870617AC360000069298 /* PLControl.m in Sources */,
+				890B870717AC360000069298 /* PLControlZoomIn.m in Sources */,
+				890B870817AC360000069298 /* PLControlZoomOut.m in Sources */,
+				890B870917AC360000069298 /* PLCube.m in Sources */,
+				890B870A17AC360000069298 /* PLCylinder.m in Sources */,
+				890B870B17AC360000069298 /* PLImage.m in Sources */,
+				890B870C17AC360000069298 /* PLMath.m in Sources */,
+				890B870D17AC360000069298 /* PLObject.m in Sources */,
+				890B870E17AC360000069298 /* PLRenderer.m in Sources */,
+				890B870F17AC360000069298 /* PLResources.m in Sources */,
+				890B871017AC360000069298 /* PLScene.m in Sources */,
+				890B871117AC360000069298 /* PLSceneElement.m in Sources */,
+				890B871217AC360000069298 /* PLSceneElementBase.m in Sources */,
+				890B871317AC360000069298 /* PLSphere.m in Sources */,
+				890B871417AC360000069298 /* PLTexture.m in Sources */,
+				890B871517AC360000069298 /* PLUtils.m in Sources */,
+				890B871617AC360000069298 /* PLView.m in Sources */,
+				890B871717AC360000069298 /* PLViewBase.m in Sources */,
+				890B871817AC360000069298 /* NSDictionary+ValidParsers.m in Sources */,
+				890B871917AC360000069298 /* NSMutableDictionary+ImageMetadata.m in Sources */,
+				890B871A17AC360000069298 /* UIDevice+Hardware.m in Sources */,
+				890B871B17AC360000069298 /* UIImage+Alpha.m in Sources */,
+				890B871C17AC360000069298 /* UIImage+fixOrientation.m in Sources */,
+				890B871D17AC360000069298 /* UIImage+Resize.m in Sources */,
+				890B871E17AC360000069298 /* UIImage+RoundedCorner.m in Sources */,
+				890B871F17AC360000069298 /* UIImage+Scale.m in Sources */,
+				890B872017AC360000069298 /* InventoryViewController.m in Sources */,
+				890B872117AC360000069298 /* MapViewController.m in Sources */,
+				890B872217AC360000069298 /* WebPageViewController.m in Sources */,
+				890B872317AC360000069298 /* NpcViewController.m in Sources */,
+				890B872417AC360000069298 /* ItemActionViewController.m in Sources */,
+				890B872517AC360000069298 /* ItemViewController.m in Sources */,
+				890B872617AC360000069298 /* GameObjectViewController.m in Sources */,
+				890B872717AC360000069298 /* GamePlayViewController.m in Sources */,
+				890B872817AC360000069298 /* GamePickersViewController.m in Sources */,
+				890B872917AC360000069298 /* ARISAlertHandler.m in Sources */,
+				890B872A17AC360000069298 /* ARISPusherHandler.m in Sources */,
+				890B872B17AC360000069298 /* ARISContainerViewController.m in Sources */,
+				890B872C17AC360000069298 /* ARISGamePlayTabBarViewController.m in Sources */,
+				890B872D17AC360000069298 /* ARISNavigationController.m in Sources */,
+				890B872E17AC360000069298 /* JSONConnection+Local.m in Sources */,
+				890B872F17AC360000069298 /* LocalData.m in Sources */,
+				890B873017AC360000069298 /* LocalMap.m in Sources */,
+				890B873117AC360000069298 /* LocalMapView.m in Sources */,
+				890B873217AC360000069298 /* aris.xcdatamodeld in Sources */,
+				890B873317AC360000069298 /* MComment.m in Sources */,
+				890B873417AC360000069298 /* MGame.m in Sources */,
+				890B873517AC360000069298 /* MItem.m in Sources */,
+				890B873617AC360000069298 /* MLocation.m in Sources */,
+				890B873717AC360000069298 /* MMap.m in Sources */,
+				890B873817AC360000069298 /* MMedia.m in Sources */,
+				890B873917AC360000069298 /* MNode.m in Sources */,
+				890B873A17AC360000069298 /* MNpc.m in Sources */,
+				890B873B17AC360000069298 /* MNpcConversation.m in Sources */,
+				890B873C17AC360000069298 /* MOverlay.m in Sources */,
+				890B873D17AC360000069298 /* MOverlayTile.m in Sources */,
+				890B873E17AC360000069298 /* MPlayer.m in Sources */,
+				890B873F17AC360000069298 /* MPlayerItem.m in Sources */,
+				890B874017AC360000069298 /* MPlayerLog.m in Sources */,
+				890B874117AC360000069298 /* MPlayerStateChange.m in Sources */,
+				890B874217AC360000069298 /* MQRCode.m in Sources */,
+				890B874317AC360000069298 /* MQuest.m in Sources */,
+				890B874417AC360000069298 /* MRequirement.m in Sources */,
+				890B874517AC360000069298 /* MTab.m in Sources */,
+				890B874617AC360000069298 /* NSData+md5.m in Sources */,
+				890B874717AC360000069298 /* NSURLConnection+block.m in Sources */,
+				890B874817AC360000069298 /* StoreLocallyViewController.m in Sources */,
+				890B874917AC360000069298 /* MTStatusBarOverlay.m in Sources */,
+				890B874A17AC360000069298 /* UIColor+ARISColors.m in Sources */,
+				890B874B17AC360000069298 /* AudioSlider.m in Sources */,
+				890B874C17AC360000069298 /* AudioTint.m in Sources */,
+				890B874D17AC360000069298 /* AudioVisualizerViewController.m in Sources */,
+				890B874E17AC360000069298 /* FreqHistogramControl.m in Sources */,
+				890B874F17AC360000069298 /* WaveformControl.m in Sources */,
+				890B875017AC360000069298 /* WaveSampleProvider.m in Sources */,
+				890B875117AC360000069298 /* Playhead.m in Sources */,
+				890B875217AC360000069298 /* GamePickerSearching.js in Sources */,
+				890B875317AC360000069298 /* ARISWebView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		890B868217AC360000069298 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ZXingWidget;
+			targetProxy = 890B868317AC360000069298 /* PBXContainerItemProxy */;
+		};
 		AAF6FE33174FBCBC00C3E687 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ZXingWidget;
@@ -3338,6 +4574,104 @@
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
+		};
+		890B889517AC360000069298 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv7,
+					armv6,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = src/ARIS_Prefix.pch;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GENERATE_PROFILING_CODE = NO;
+				HEADER_SEARCH_PATHS = (
+					"src/third_party/zxing/iphone/ZXingWidget/Classes/**",
+					src/third_party/zxing/cpp/core/src,
+				);
+				INFOPLIST_FILE = "ARIS copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/**",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/src/third_party/bump\"",
+					"\"$(SRCROOT)/src/third_party/CrittercismSDK\"",
+					"\"$(SRCROOT)/src/third_party/pusher\"",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-v",
+				);
+				PRODUCT_NAME = "ARIS-iPad";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		890B889617AC360000069298 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv7,
+					armv6,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: David Gagnon (VDP976Y25G)";
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = src/ARIS_Prefix.pch;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GENERATE_PROFILING_CODE = NO;
+				HEADER_SEARCH_PATHS = (
+					"src/third_party/zxing/iphone/ZXingWidget/Classes/**",
+					src/third_party/zxing/cpp/core/src,
+				);
+				INFOPLIST_FILE = "ARIS copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/**",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/src/third_party/bump\"",
+					"\"$(SRCROOT)/src/third_party/CrittercismSDK\"",
+					"\"$(SRCROOT)/src/third_party/pusher\"",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-v",
+				);
+				PRODUCT_NAME = "ARIS-iPad";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "38D78BF2-D5B6-4241-AB57-A8B1C872AF49";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
 		};
 		AB1CA8BB13C7D2B700131F81 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -3438,6 +4772,15 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				AB1CA8BC13C7D2B700131F81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		890B889417AC360000069298 /* Build configuration list for PBXNativeTarget "ARIS-iPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				890B889517AC360000069298 /* Debug */,
+				890B889617AC360000069298 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
