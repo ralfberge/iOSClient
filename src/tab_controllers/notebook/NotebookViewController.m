@@ -105,10 +105,10 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"14-gear"] style:UIBarButtonItemStyleBordered target:self action:@selector(toggleMenu)];
     
     float screenHeight = [UIScreen mainScreen].applicationFrame.size.height;
-    [self.filterToolBar setFrame:CGRectMake(0,             -44, 320,                     44)];
-    [self.toolBar       setFrame:CGRectMake(0,               0, 320,                     44)];
-    [self.noteTable     setFrame:CGRectMake(0,              44, 320, screenHeight-(2*44)-49)];
-    [self.sortToolBar   setFrame:CGRectMake(0, screenHeight-49, 320,                     44)];
+    [self.filterToolBar setFrame:CGRectMake(0,             -44, [UIScreen mainScreen].bounds.size.width,                     44)];
+    [self.toolBar       setFrame:CGRectMake(0,               0, [UIScreen mainScreen].bounds.size.width,                     44)];
+    [self.noteTable     setFrame:CGRectMake(0,              44, [UIScreen mainScreen].bounds.size.width, screenHeight-(2*44)-49)];
+    [self.sortToolBar   setFrame:CGRectMake(0, screenHeight-49, [UIScreen mainScreen].bounds.size.width,                     44)];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -139,10 +139,10 @@
         [UIView beginAnimations:nil context:nil];
         [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
         [UIView setAnimationDuration:.2];
-        [self.filterToolBar setFrame:CGRectMake(0,                      0, 320,                     44)];
-        [self.toolBar       setFrame:CGRectMake(0,                     44, 320,                     44)];
-        [self.noteTable     setFrame:CGRectMake(0,                 (2*44), 320, screenHeight-(4*44)-49)];
-        [self.sortToolBar   setFrame:CGRectMake(0, screenHeight-(2*44)-49, 320,                     44)];
+        [self.filterToolBar setFrame:CGRectMake(0,                      0, [UIScreen mainScreen].bounds.size.width,                     44)];
+        [self.toolBar       setFrame:CGRectMake(0,                     44, [UIScreen mainScreen].bounds.size.width,                     44)];
+        [self.noteTable     setFrame:CGRectMake(0,                 (2*44), [UIScreen mainScreen].bounds.size.width, screenHeight-(4*44)-49)];
+        [self.sortToolBar   setFrame:CGRectMake(0, screenHeight-(2*44)-49, [UIScreen mainScreen].bounds.size.width,                     44)];
         [self.navigationItem.rightBarButtonItem setStyle:UIBarButtonItemStyleDone];
         [UIView commitAnimations];
     }
@@ -151,10 +151,10 @@
         [UIView beginAnimations:nil context:nil];
         [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
         [UIView setAnimationDuration:.2];
-        [self.filterToolBar setFrame:CGRectMake(0,             -44, 320,                     44)];
-        [self.toolBar       setFrame:CGRectMake(0,               0, 320,                     44)];
-        [self.noteTable     setFrame:CGRectMake(0,              44, 320, screenHeight-(2*44)-49)];
-        [self.sortToolBar   setFrame:CGRectMake(0, screenHeight-49, 320,                     44)];
+        [self.filterToolBar setFrame:CGRectMake(0,             -44, [UIScreen mainScreen].bounds.size.width,                     44)];
+        [self.toolBar       setFrame:CGRectMake(0,               0, [UIScreen mainScreen].bounds.size.width,                     44)];
+        [self.noteTable     setFrame:CGRectMake(0,              44, [UIScreen mainScreen].bounds.size.width, screenHeight-(2*44)-49)];
+        [self.sortToolBar   setFrame:CGRectMake(0, screenHeight-49, [UIScreen mainScreen].bounds.size.width,                     44)];
         [self.navigationItem.rightBarButtonItem setStyle:UIBarButtonItemStyleBordered];
         [UIView commitAnimations];
     }

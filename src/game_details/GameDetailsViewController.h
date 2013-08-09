@@ -23,10 +23,10 @@
 	Game *game; 
     IBOutlet UITableView *tableView;
     IBOutlet UIWebView *descriptionWebView;
-	IBOutlet UILabel *titleLabel;
+/*	IBOutlet UILabel *titleLabel;
 	IBOutlet UILabel *descriptionLabel;
 	IBOutlet UILabel *authorsLabel;
-	IBOutlet UILabel *locationLabel;
+	IBOutlet UILabel *locationLabel; */
 	IBOutlet UIScrollView *scrollView;
 	IBOutlet UIView *contentView;
     IBOutlet UISegmentedControl *segmentedControl;
@@ -39,10 +39,10 @@
 @property (nonatomic) Game *game;
 @property (nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) IBOutlet UIWebView *descriptionWebView;
-@property (nonatomic) IBOutlet UILabel *titleLabel;
+/*@property (nonatomic) IBOutlet UILabel *titleLabel;
 @property (nonatomic) IBOutlet UILabel *authorsLabel;
 @property (nonatomic) IBOutlet UILabel *locationLabel;
-@property (nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (nonatomic) IBOutlet UILabel *descriptionLabel; */
 @property (nonatomic) IBOutlet UIScrollView *scrollView;
 @property (nonatomic) IBOutlet UIView *contentView;
 @property (nonatomic) IBOutlet UISegmentedControl *segmentedControl;

@@ -210,7 +210,7 @@
     if(![content.getType isEqualToString:@"UPLOAD"])
     {
         self.pageControl.numberOfPages++;
-        self.scrollView.contentSize = CGSizeMake(320 * self.pageControl.numberOfPages, self.scrollView.frame.size.height);
+        self.scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width * self.pageControl.numberOfPages, self.scrollView.frame.size.height);
         CGRect frame = CGRectMake(self.scrollView.frame.size.width * (self.pageControl.numberOfPages-1), 0,
                                   self.scrollView.frame.size.width,
                                   self.scrollView.frame.size.height);

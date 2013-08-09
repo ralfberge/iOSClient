@@ -104,7 +104,7 @@
     [super viewDidLoad];
 
 	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BackButtonKey", @"") style:UIBarButtonItemStyleBordered target:self action:@selector(backButtonTouchAction)];
-    self.meter = [[AudioMeter alloc] initWithFrame:CGRectMake(0, 0, 320, 360)];
+    self.meter = [[AudioMeter alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 360)];
 	self.meter.alpha = 0.0;
 	[self.view addSubview:self.meter];
 	[self.view sendSubviewToBack:self.meter];

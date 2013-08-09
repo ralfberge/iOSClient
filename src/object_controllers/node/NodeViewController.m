@@ -99,20 +99,20 @@ NSString *const kPlaqueDescriptionHtmlTemplate =
     Media *media = [[AppModel sharedAppModel] mediaForMediaId:self.node.mediaId ofType:nil];
     
     self.mediaSection = [[UIView alloc] init];
-    self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)]; //Needs width of 320, otherwise "height" is calculated wrong because only 1 character can fit per line
+    self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 1)]; //Needs width of 320, otherwise "height" is calculated wrong because only 1 character can fit per line
     self.continueButton = [UIButton buttonWithType:UIButtonTypeCustom];
     //self.continueButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     
     if([media.type isEqualToString:@"PHOTO"] && media.url)
     {
-        self.mediaSection.frame = CGRectMake(0,0,320,20);
-        AsyncMediaImageView *mediaImageView = [[AsyncMediaImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 320) andMedia:media andDelegate:self];
+        self.mediaSection.frame = CGRectMake(0,0,[UIScreen mainScreen].bounds.size.width,20);
+        AsyncMediaImageView *mediaImageView = [[AsyncMediaImageView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 320) andMedia:media andDelegate:self];
         [self.mediaSection addSubview:mediaImageView];
     }
     else if(([media.type isEqualToString:@"VIDEO"] || [media.type isEqualToString:@"AUDIO"]) && media.url)
     {
-        self.mediaSection.frame = CGRectMake(0,0,320,240);
-        self.webView.frame = CGRectMake(0, self.mediaSection.frame.size.height+10, 320, self.webView.frame.size.height);
+        self.mediaSection.frame = CGRectMake(0,0,[UIScreen mainScreen].bounds.size.width,240);
+        self.webView.frame = CGRectMake(0, self.mediaSection.frame.size.height+10, [UIScreen mainScreen].bounds.size.width, self.webView.frame.size.height);
         AsyncMediaPlayerButton *mediaButton = [[AsyncMediaPlayerButton alloc] initWithFrame:CGRectMake(8, 0, 304, 244) media:media presenter:self preloadNow:NO];
         [self.mediaSection addSubview:mediaButton];
     }
@@ -139,14 +139,14 @@ NSString *const kPlaqueDescriptionHtmlTemplate =
     self.continueButton.backgroundColor = [UIColor ARISColorOffWhite];
     [self.continueButton setTitleColor:[UIColor ARISColorBlack] forState:UIControlStateNormal];
     [self.continueButton setTitle:NSLocalizedString(@"TapToContinueKey", @"") forState:UIControlStateNormal];
-    [self.continueButton setFrame:CGRectMake(0, 20, 320, 45)];
+    [self.continueButton setFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 45)];
     self.continueButton.layer.cornerRadius = 10.0f;
     self.continueButton.titleLabel.font = [UIFont boldSystemFontOfSize:16];
     [self.continueButton addTarget:self action:@selector(continueButtonTouchAction) forControlEvents:UIControlEventTouchUpInside];
     
     //Setup the scrollview
     //scrollView.frame = self.parentViewController.view.frame;
-    scrollView.contentSize = CGSizeMake(320, self.continueButton.frame.origin.y+self.continueButton.frame.size.height+50);
+    scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, self.continueButton.frame.origin.y+self.continueButton.frame.size.height+50);
     if(self.mediaSection) [scrollView addSubview:self.mediaSection];
     [scrollView addSubview:self.webView];
     [scrollView addSubview:self.continueButton];
@@ -154,11 +154,11 @@ NSString *const kPlaqueDescriptionHtmlTemplate =
 
 - (void) imageFinishedLoading:(AsyncMediaImageView *)image
 {
-    image.frame = CGRectMake(0, 0, 320, 320/image.image.size.width*image.image.size.height);
+    image.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width/image.image.size.width*image.image.size.height);
     self.mediaSection.frame = image.frame;
-    self.webView.frame = CGRectMake(0, self.mediaSection.frame.size.height+10, 320, self.webView.frame.size.height);
-    self.continueButton.frame = CGRectMake(0, self.webView.frame.origin.y + self.webView.frame.size.height+10, 320, 45);
-    self.scrollView.contentSize = CGSizeMake(320,self.continueButton.frame.origin.y + self.continueButton.frame.size.height+50);
+    self.webView.frame = CGRectMake(0, self.mediaSection.frame.size.height+10, [UIScreen mainScreen].bounds.size.width, self.webView.frame.size.height);
+    self.continueButton.frame = CGRectMake(0, self.webView.frame.origin.y + self.webView.frame.size.height+10, [UIScreen mainScreen].bounds.size.width, 45);
+    self.scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width,self.continueButton.frame.origin.y + self.continueButton.frame.size.height+50);
 }
 
 - (BOOL) webView:(UIWebView*)webViewFromMethod shouldStartLoadWithRequest: (NSURLRequest*)req navigationType:(UIWebViewNavigationType)navigationType
@@ -190,7 +190,7 @@ NSString *const kPlaqueDescriptionHtmlTemplate =
                                              self.webView.frame.origin.y + self.webView.frame.size.height+10,
                                              self.continueButton.frame.size.width,
                                              self.continueButton.frame.size.height)];
-    scrollView.contentSize = CGSizeMake(320,self.continueButton.frame.origin.y + self.continueButton.frame.size.height+50);
+    scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width,self.continueButton.frame.origin.y + self.continueButton.frame.size.height+50);
     
     [self.webViewSpinner removeFromSuperview];
 }

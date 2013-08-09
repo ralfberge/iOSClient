@@ -87,26 +87,26 @@ NSString *const kQuestDetailsHtmlTemplate =
     self.title = self.quest.name;
     self.navigationItem.title = self.quest.name;
     
-    self.webView = [[ARISWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 1) delegate:self]; //Needs width of 320, otherwise "height" is calculated wrong because only 1 character can fit per line
+    self.webView = [[ARISWebView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 1) delegate:self]; //Needs width of 320, otherwise "height" is calculated wrong because only 1 character can fit per line
     
     Media *media = [[AppModel sharedAppModel] mediaForMediaId:self.quest.mediaId ofType:nil];
     if(media && [media.type isEqualToString:@"PHOTO"] && media.url)
     {
-        self.mediaSection = [[UIView alloc] initWithFrame:CGRectMake(0,0,320,20)];
-        AsyncMediaImageView *mediaImageView = [[AsyncMediaImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 320) andMedia:media andDelegate:self];
+        self.mediaSection = [[UIView alloc] initWithFrame:CGRectMake(0,0,[UIScreen mainScreen].bounds.size.width,20)];
+        AsyncMediaImageView *mediaImageView = [[AsyncMediaImageView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 320) andMedia:media andDelegate:self];
         [self.mediaSection addSubview:mediaImageView];
     }
     else if(media && ([media.type isEqualToString:@"VIDEO"] || [media.type isEqualToString:@"AUDIO"]) && media.url)
     {
-        self.mediaSection = [[UIView alloc] initWithFrame:CGRectMake(0,0,320,240)];
+        self.mediaSection = [[UIView alloc] initWithFrame:CGRectMake(0,0,[UIScreen mainScreen].bounds.size.width,240)];
         self.webView.frame = CGRectMake(0, self.mediaSection.frame.size.height+10, 320, self.webView.frame.size.height);
         AsyncMediaPlayerButton *mediaButton = [[AsyncMediaPlayerButton alloc] initWithFrame:CGRectMake(8, 0, 304, 244) media:media presenter:self preloadNow:NO];
         [self.mediaSection addSubview:mediaButton];
     }
     else
     {
-        self.mediaSection = [[UIView alloc] initWithFrame:CGRectMake(0,0,320,20)];
-        AsyncMediaImageView *mediaImageView = [[AsyncMediaImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 320)];
+        self.mediaSection = [[UIView alloc] initWithFrame:CGRectMake(0,0,[UIScreen mainScreen].bounds.size.width,20)];
+        AsyncMediaImageView *mediaImageView = [[AsyncMediaImageView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 320)];
         [mediaImageView setDelegate:self];
         [mediaImageView updateViewWithNewImage:[UIImage imageNamed:@"item.png"]];
         [self.mediaSection addSubview:mediaImageView];
@@ -154,17 +154,17 @@ NSString *const kQuestDetailsHtmlTemplate =
     [self.webView addSubview:self.webViewSpinner];
     
     //Setup the scrollview
-    scrollView.contentSize = CGSizeMake(320, 50);
+    scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 50);
     if(self.mediaSection) [scrollView addSubview:self.mediaSection];
     [scrollView addSubview:self.webView];
 }
 
 - (void) imageFinishedLoading:(AsyncMediaImageView *)image
 {
-    image.frame = CGRectMake(0, 0, 320, 320/image.image.size.width*image.image.size.height);
+    image.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width/image.image.size.width*image.image.size.height);
     self.mediaSection.frame = image.frame;
-    self.webView.frame = CGRectMake(0, self.mediaSection.frame.size.height+10, 320, self.webView.frame.size.height);
-    self.scrollView.contentSize = CGSizeMake(320,self.webView.frame.origin.y+self.webView.frame.size.height+50);
+    self.webView.frame = CGRectMake(0, self.mediaSection.frame.size.height+10, [UIScreen mainScreen].bounds.size.width, self.webView.frame.size.height);
+    self.scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width,self.webView.frame.origin.y+self.webView.frame.size.height+50);
 }
 
 - (void) webViewDidFinishLoad:(UIWebView *)theWebView
@@ -175,7 +175,7 @@ NSString *const kQuestDetailsHtmlTemplate =
     //Calculate the height of the web content
     float newHeight = [[self.webView stringByEvaluatingJavaScriptFromString:@"document.body.offsetHeight;"] floatValue] + 3;
     [self.webView setFrame:CGRectMake(self.webView.frame.origin.x,self.webView.frame.origin.y,self.webView.frame.size.width,newHeight+5)];
-    scrollView.contentSize = CGSizeMake(320,self.webView.frame.origin.y+self.webView.frame.size.height+50);
+    scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width,self.webView.frame.origin.y+self.webView.frame.size.height+50);
     
     [self.webViewSpinner removeFromSuperview];
 }

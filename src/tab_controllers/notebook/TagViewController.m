@@ -84,7 +84,7 @@
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
     [UIView setAnimationDuration:.5];
-    [self.addTagToolBar setFrame:CGRectMake(addTagToolBar.frame.origin.x, -44, 320, 44)];
+    [self.addTagToolBar setFrame:CGRectMake(addTagToolBar.frame.origin.x, -44, [UIScreen mainScreen].bounds.size.width, 44)];
     [UIView commitAnimations];
     [self.tagTextField resignFirstResponder];
 }
@@ -94,7 +94,7 @@
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
     [UIView setAnimationDuration:.5];
-    [self.addTagToolBar setFrame:CGRectMake(addTagToolBar.frame.origin.x, -44, 320, 44)];
+    [self.addTagToolBar setFrame:CGRectMake(addTagToolBar.frame.origin.x, -44, [UIScreen mainScreen].bounds.size.width, 44)];
     [UIView commitAnimations];
     [[AppServices sharedAppServices] addTagToNote:self.note.noteId tagName:self.tagTextField.text];
     Tag *tempTag = [[Tag alloc]init];
@@ -185,7 +185,7 @@
             [UIView beginAnimations:nil context:nil];
             [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
             [UIView setAnimationDuration:.5];
-            [self.addTagToolBar setFrame:CGRectMake(addTagToolBar.frame.origin.x, 0, 320, 44)];
+            [self.addTagToolBar setFrame:CGRectMake(addTagToolBar.frame.origin.x, 0, [UIScreen mainScreen].bounds.size.width, 44)];
             [UIView commitAnimations];
         }
         else

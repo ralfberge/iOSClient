@@ -35,14 +35,14 @@
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 			</object>
 			<object class="IBUIView" id="191373211">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="IBUIView" id="395071343">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">278</int>
-						<string key="NSFrame">{{20, 13}, {113, 40}}</string>
+						<int key="NSvFlags">318</int>
+						<string key="NSFrame">{{47, 10}, {302, 40}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSNextKeyView" ref="1052110051"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -56,9 +56,10 @@
 					</object>
 					<object class="IBUILabel" id="1052110051">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{151, 0}, {107, 60}}</string>
+						<int key="NSvFlags">315</int>
+						<string key="NSFrame">{{547, 0}, {140, 60}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -86,14 +87,12 @@
 						</object>
 					</object>
 				</object>
-				<string key="NSFrameSize">{300, 60}</string>
+				<string key="NSFrameSize">{768, 60}</string>
+				<reference key="NSSuperview"/>
 				<reference key="NSNextKeyView" ref="395071343"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
-					<int key="NSColorSpace">3</int>
-					<bytes key="NSWhite">MC4yNQA</bytes>
-					<object class="NSColorSpace" key="NSCustomColorSpace">
-						<int key="NSID">2</int>
-					</object>
+					<int key="NSColorSpace">2</int>
+					<bytes key="NSRGB">MC44OTQxMTc2NDcxIDAuODk4MDM5MjE1NyAwLjkwMTk2MDc4NDMAA</bytes>
 				</object>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 			</object>

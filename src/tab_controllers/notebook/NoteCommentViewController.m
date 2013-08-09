@@ -221,8 +221,8 @@
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationCurve:UIViewAnimationCurveLinear];
     [UIView setAnimationDuration:.5];
-    [self.textBox   setFrame:CGRectMake(0, 0, 320, self.textBox.superview.frame.size.height-216)];
-    [self.inputView setFrame:CGRectMake(0, self.textBox.superview.frame.size.height-268, 320, 52)];
+    [self.textBox   setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, self.textBox.superview.frame.size.height-216)];
+    [self.inputView setFrame:CGRectMake(0, self.textBox.superview.frame.size.height-268, [UIScreen mainScreen].bounds.size.width, 52)];
     [UIView commitAnimations];
     
     [self.textBox becomeFirstResponder];
@@ -237,8 +237,8 @@
         [UIView beginAnimations:nil context:nil];
         [UIView setAnimationCurve:UIViewAnimationCurveLinear];
         [UIView setAnimationDuration:.5];
-        [self.textBox   setFrame:CGRectMake(0, -216, 320, 216)];
-        [self.inputView setFrame:CGRectMake(0, self.textBox.superview.frame.size.height, 320, 52)];
+        [self.textBox   setFrame:CGRectMake(0, -216, [UIScreen mainScreen].bounds.size.width, 216)];
+        [self.inputView setFrame:CGRectMake(0, self.textBox.superview.frame.size.height, [UIScreen mainScreen].bounds.size.width, 52)];
         [UIView commitAnimations];
         
         [self.textBox resignFirstResponder];
@@ -267,8 +267,8 @@
         [UIView beginAnimations:nil context:nil];
         [UIView setAnimationCurve:UIViewAnimationCurveLinear];
         [UIView setAnimationDuration:.5];
-        [self.textBox   setFrame:CGRectMake(0, -216, 320, 216)];
-        [self.inputView setFrame:CGRectMake(0, self.textBox.superview.frame.size.height, 320, 52)];
+        [self.textBox   setFrame:CGRectMake(0, -216, [UIScreen mainScreen].bounds.size.width, 216)];
+        [self.inputView setFrame:CGRectMake(0, self.textBox.superview.frame.size.height, [UIScreen mainScreen].bounds.size.width, 52)];
         [UIView commitAnimations];
         
         [self.textBox resignFirstResponder];

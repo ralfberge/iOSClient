@@ -198,12 +198,12 @@ NSString *const kDialogHtmlTemplate =
     [self.pcImageView setDelegate:self];
     [self.npcImageView setDelegate:self];
     
-    self.pcImageView.frame  = CGRectMake(self.pcImageView.frame.origin.x, self.pcImageView.frame.origin.y, 320, [UIScreen mainScreen].applicationFrame.size.height-44);
+    self.pcImageView.frame  = CGRectMake(self.pcImageView.frame.origin.x, self.pcImageView.frame.origin.y, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].applicationFrame.size.height-44);
     pcImageSection.frame = CGRectMake(0,0,pcImageView.frame.size.width,pcImageView.frame.size.height);
     pcImageSection.contentSize  = pcImageSection.frame.size;
     pcZoomContainer.frame = CGRectMake(0,0,pcImageSection.frame.size.width,pcImageSection.frame.size.height);
 
-    self.npcImageView.frame = CGRectMake(self.npcImageView.frame.origin.x, self.npcImageView.frame.origin.y, 320, [UIScreen mainScreen].applicationFrame.size.height-44);
+    self.npcImageView.frame = CGRectMake(self.npcImageView.frame.origin.x, self.npcImageView.frame.origin.y, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].applicationFrame.size.height-44);
     npcImageSection.frame = CGRectMake(0,0,npcImageView.frame.size.width,npcImageView.frame.size.height);
     npcImageSection.contentSize = npcImageSection.frame.size;
     pcZoomContainer.frame = CGRectMake(0,0,npcImageSection.frame.size.width,npcImageSection.frame.size.height);
@@ -217,9 +217,9 @@ NSString *const kDialogHtmlTemplate =
 	[pcTapToContinueButton  setTitle:NSLocalizedString(@"DialogContinue",@"") forState:UIControlStateNormal];
     npcTapToContinueButton.backgroundColor = [UIColor ARISColorOffWhite];
     pcTapToContinueButton.backgroundColor = [UIColor ARISColorOffWhite];
-    [npcTapToContinueButton setFrame:CGRectMake(0, 20, 320, 45)];
+    [npcTapToContinueButton setFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 45)];
     npcTapToContinueButton.layer.cornerRadius = 10.0f;
-    [pcTapToContinueButton setFrame:CGRectMake(0, 20, 320, 45)];
+    [pcTapToContinueButton setFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 45)];
     pcTapToContinueButton.layer.cornerRadius = 10.0f;
     
 	textSizeButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"textToggle.png"] style:UIBarButtonItemStylePlain target:self action:@selector(toggleNextTextBoxSize)];
@@ -673,8 +673,8 @@ NSString *const kDialogHtmlTemplate =
 
 - (void) moveAllOutWithPostSelector:(SEL)postSelector
 {
-	[self movePcTo:CGRectMake( 160, 0, 320, [UIScreen mainScreen].applicationFrame.size.height-44) withAlpha:0.0
-		  andNpcTo:CGRectMake(-160, 0, 320, [UIScreen mainScreen].applicationFrame.size.height-44) withAlpha:0.0
+	[self movePcTo:CGRectMake( 160, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].applicationFrame.size.height-44) withAlpha:0.0
+		  andNpcTo:CGRectMake(-160, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].applicationFrame.size.height-44) withAlpha:0.0
   withPostSelector:postSelector];
 }
 
@@ -713,9 +713,9 @@ NSString *const kDialogHtmlTemplate =
     int screenHeight = [UIScreen mainScreen].applicationFrame.size.height-44;
     switch(textboxSizeState)
     {
-        case 0: newTextFrame = CGRectMake(0, screenHeight    , 320,            1); break;
-        case 1: newTextFrame = CGRectMake(0, screenHeight-128, 320,          128); break;
-        case 2: newTextFrame = CGRectMake(0,                0, 320, screenHeight); break;
+        case 0: newTextFrame = CGRectMake(0, screenHeight    , [UIScreen mainScreen].bounds.size.width,            1); break;
+        case 1: newTextFrame = CGRectMake(0, screenHeight-128, [UIScreen mainScreen].bounds.size.width,          128); break;
+        case 2: newTextFrame = CGRectMake(0,                0, [UIScreen mainScreen].bounds.size.width, screenHeight); break;
     }
     
 	[UIView beginAnimations:@"toggleTextSize" context:nil];

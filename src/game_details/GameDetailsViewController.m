@@ -53,10 +53,10 @@ NSString *const kGameDetailsHtmlTemplate =
 @synthesize descriptionWebView;
 @synthesize game;
 @synthesize tableView;
-@synthesize titleLabel;
-@synthesize authorsLabel;
-@synthesize descriptionLabel;
-@synthesize locationLabel;
+//@synthesize titleLabel;
+//@synthesize authorsLabel;
+//@synthesize descriptionLabel;
+//@synthesize locationLabel;
 @synthesize scrollView;
 @synthesize contentView;
 @synthesize segmentedControl, newHeight, mediaImageView;
@@ -81,12 +81,12 @@ NSString *const kGameDetailsHtmlTemplate =
 
 - (void)viewDidLoad
 {
-    self.mediaImageView = [[AsyncMediaImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 200)];
+    self.mediaImageView = [[AsyncMediaImageView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200)];
 
     self.title = self.game.name;
-    self.authorsLabel.text = [NSString stringWithFormat:@"%@: ", NSLocalizedString(@"GameDetailsAuthorKey", @"")];
+   /* self.authorsLabel.text = [NSString stringWithFormat:@"%@: ", NSLocalizedString(@"GameDetailsAuthorKey", @"")];
     self.authorsLabel.text = [self.authorsLabel.text stringByAppendingString:self.game.authors];
-    self.descriptionLabel.text = [NSString stringWithFormat:@"%@: ", NSLocalizedString(@"DescriptionKey", @"")];
+    self.descriptionLabel.text = [NSString stringWithFormat:@"%@: ", NSLocalizedString(@"DescriptionKey", @"")]; */
 
 	[descriptionWebView setBackgroundColor:[UIColor clearColor]];
     [self.segmentedControl setTitle:[NSString stringWithFormat:@"%@: %d",NSLocalizedString(@"RatingKey", @""),game.rating] forSegmentAtIndex:0];
@@ -186,7 +186,7 @@ NSString *const kGameDetailsHtmlTemplate =
     {
         if(self.game.splashMedia) [self.mediaImageView loadMedia:self.game.splashMedia];
         else self.mediaImageView.image = [UIImage imageNamed:@"DefaultGameSplash.png"];
-        self.mediaImageView.frame = CGRectMake(0, 0, 320, 200);
+        self.mediaImageView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200);
         
         cell.backgroundView = mediaImageView;
         cell.backgroundView.layer.masksToBounds = YES;

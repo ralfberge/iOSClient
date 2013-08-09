@@ -94,9 +94,9 @@
     if([self.mode isEqualToString:@"preview"])
     {
         self.textBox.userInteractionEnabled = NO;
-        self.textBox.frame = CGRectMake(0, 0, 320, 367);
+        self.textBox.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 367);
     }
-    else self.textBox.frame = CGRectMake(0, 0, 320, 330);
+    else self.textBox.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 330);
 }
 
 -(void)updateContentTouchAction
@@ -109,16 +109,16 @@
 {
     if([self.textBox.text isEqualToString:@"Write note here..."])
         [self.textBox setText:@""];
-    self.textBox.frame = CGRectMake(0, 0, 320, 230);
+    self.textBox.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 230);
 }
 
 -(void)hideKeyboard
 {
     [self.textBox resignFirstResponder];
     if([self.mode isEqualToString:@"edit"])
-        self.textBox.frame = CGRectMake(0, 0, 320, 330);
+        self.textBox.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 330);
     else
-        self.textBox.frame = CGRectMake(0, 0, 320, 367);
+        self.textBox.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 367);
 }
 
 - (void) saveButtonTouchAction

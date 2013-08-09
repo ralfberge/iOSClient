@@ -258,7 +258,7 @@ NSString *const kQuestsHtmlTemplate =
 
 - (UITableViewCell *) getCellContentViewForQuest:(Quest *)quest
 {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 100)];
     cell.backgroundColor = [UIColor clearColor];
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	

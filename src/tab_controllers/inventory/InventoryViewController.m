@@ -105,7 +105,7 @@
         self.capBar.progress = 0;
         self.capBar.hidden = YES;
         self.capLabel.hidden = YES;
-        self.inventoryTable.frame = CGRectMake(0, 0, 320, 367);
+        self.inventoryTable.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 367);
     }
     else
     {
@@ -113,7 +113,7 @@
         self.capLabel.text = [NSString stringWithFormat:@"%@: %d/%d", NSLocalizedString(@"WeightCapacityKey", @""), 0, 0];
         self.capBar.hidden = NO;
         self.capLabel.hidden = NO;
-        self.inventoryTable.frame = CGRectMake(0, 42, 320, 325);
+        self.inventoryTable.frame = CGRectMake(0, 42, [UIScreen mainScreen].bounds.size.width, 325);
     }
 }
 
