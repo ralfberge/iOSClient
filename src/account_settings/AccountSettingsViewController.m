@@ -23,7 +23,9 @@
     if(self = [super initWithNibName:@"AccountSettingsViewController" bundle:nil])
     {
         delegate = d;
-        self.title = @"Account Settings";
+        self.title = NSLocalizedString(@"AccountSettingsKey",@"");
+        
+        
     }
     return self;
 }
@@ -36,6 +38,10 @@
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BackButtonKey", @"") style:UIBarButtonItemStyleBordered target:self action:@selector(backButtonTouched)];
 	self.navigationItem.leftBarButtonItem = backButton;
+    
+    [profileButton setTitle:NSLocalizedString(@"LogoutPublicNameImageKey",@"") forState:UIControlStateNormal];
+    [passButton setTitle:NSLocalizedString(@"LogoutChangePassKey",@"") forState:UIControlStateNormal];
+    
 }
 
 - (IBAction)logoutButtonPressed:(id)sender

@@ -41,6 +41,16 @@
     
     self.timeControl.enabled = YES;
     self.timeControl.alpha = 1;
+    
+    
+    [timeControl setTitle:[NSString stringWithFormat: @"%@", NSLocalizedString(@"GamePickerPopularDay", @"")] forSegmentAtIndex:0];
+    [timeControl setTitle:[NSString stringWithFormat: @"%@", NSLocalizedString(@"GamePickerPopularWeek", @"")] forSegmentAtIndex:1];
+    [timeControl setTitle:[NSString stringWithFormat: @"%@", NSLocalizedString(@"GamePickerPopularMonth", @"")] forSegmentAtIndex:2];
+    
+
+    
+    
+    
 }
 
 - (void)requestNewGameList

@@ -43,6 +43,13 @@
     
     self.distanceControl.enabled = YES;
     self.distanceControl.alpha   = 1;
+    
+    [locationalControl setTitle:[NSString stringWithFormat: @"%@", NSLocalizedString(@"GamePickerNearbyLocSpecific", @"")] forSegmentAtIndex:0];
+    [locationalControl setTitle:[NSString stringWithFormat: @"%@", NSLocalizedString(@"GamePickerNearbyPlayAnywhere", @"")] forSegmentAtIndex:1];
+    
+    
+    
+    
 }
 
 - (void)requestNewGameList
