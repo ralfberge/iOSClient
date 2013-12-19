@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Xcode
 .DS_Store
 .AppleDouble
@@ -17,3 +18,37 @@ xcuserdata
 profile
 *.moved-aside
 DerivedData
+=======
+# Mac OS X Finder and whatnot
+.DS_Store
+*.swp
+*~.nib
+
+# XCode (and ancestors) per-user config (very noisy, and not relevant)
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev3
+*.pbxuser
+
+# XCode 4
+xcuserdata
+
+# build products
+build/
+
+# Other source repository archive directories (protects when importing)
+.hg
+.svn
+CVS
+
+# temporary script folders/files
+ThirdParty/boost/*
+
+# Eclipse Workspace
+.metadata
+
+# Maya temporary
+.mayaSwatches/
+>>>>>>> e8d4a02ab9d8eb409dd0d54cb6ae3420be4c7775
